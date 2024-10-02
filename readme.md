@@ -231,7 +231,61 @@ the last command will create another two files in the folder ```private-key.pem`
 
 ## Digital Signing ##
 
+Before the data is sent to the Fiscalization System, the POS Coupon details need to be digitally signed using the private key to ensure the authenticity and integrity of the data transmitted to the fiscalization system.
+
+#### Why Digital Signing? ####
+
+The fiscalization system requires each coupon to be signed digitally before submission to ensure:
+
+1. **Data Integrity:** Ensures that the data sent to the fiscalization service has not been tampered with during transmission.
+3. **Authentication:** Confirms that the coupon is issued by a legitimate entity (in this case, your business), preventing fraudulent submissions.
+3. **Non-Repudiation:** Guarantees that the sender cannot deny sending the data once it has been signed and submitted.
+
+The digital signature is generated using a private key, and the fiscalization service verifies the signature using a corresponding public key. If the signature is valid, the coupon is considered authentic.
+
+The steps that are needed to provide a valid signature are:
+
+1. **Serialization:** First, the coupon (either a Citizen or POS coupon) is serialized into a Protobuf binary format. This format ensures that the data can be transmitted efficiently and consistently.
+   ```
+   byte[] posCouponProto = posCoupon.ToByteArray();
+   ```
+2. **Base64 Encoding:** The serialized Protobuf binary data is then encoded into a Base64 string. Base64 is a binary-to-text encoding scheme that makes it easy to transfer data as a string format.
+   ```
+   var base64EncodedProto = Convert.ToBase64String(posCouponProto);
+   ```
+3. **Hashing:** Before signing, the data is hashed using a SHA-256 cryptographic hash function. Hashing converts the coupon data into a fixed-length string of bytes, ensuring that even a small change in the original data will produce a completely different hash value.
+   ```
+   var sha256 = SHA256.Create();
+   var hash = sha256.ComputeHash(base64EncodedProto);
+   ```
+4. **Signature Creation:** The hash is then signed using the ECDSA private key. This generates a digital signature, which is unique to the data and the private key. The fiscalization system can later verify this signature using the corresponding public key.
+   ```
+   var ecdsa = ECDsa.Create();
+   ecdsa.ImportFromPem(_key);  // Load the private key
+   var signature = ecdsa.SignHash(hash);
+   ```
+5. **Base64 Signature:** The generated signature is then encoded into a Base64 string, which makes it easy to include in the final request to the fiscalization service.
+   ```
+   var encodedSignature = Convert.ToBase64String(signature);
+   ```
+
+The Signer class digitally signs both Citizen and POS coupons using the **ECDSA** algorithm. A private key is loaded and used to create a signature over the serialized coupon data.
+
+```
+public string SignBytes(byte[] data)
+{
+    var ecdsa = ECDsa.Create();
+    ecdsa.ImportFromPem(_key);
+    var hash = SHA256.Create().ComputeHash(data);
+    var signature = ecdsa.SignHash(hash);
+    return Convert.ToBase64String(signature);
+}
+```
+
+The return value is a **base64-encoded** signature.
+
 ### QR Code ###
+
 
 
 ## Sending Data to Fiscalization Service ##
