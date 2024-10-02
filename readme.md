@@ -164,10 +164,10 @@ There are different ways to generate a PKI key pair, depending on the operating 
 
 We have provided a tool that simplifies the process a lot. To download the tool on you machine, click on one of the links below (depending on the operating system you are using):
 
-* [atkcli for windows](atkcli/atk-cli-windows.zip)
-* [atkcli for MacOS Intel](atkcli/atk-cli-macos-intel.zip)
-* [atkcli for MacOS M1/M2](atkcli/atk-cli-macos-apple-silicon.zip)
-* [atkcli for Linux](atkcli/atk-linux.zip)
+* [atkcli for windows](https://github.com/fiskalizimi/pos-csharp/raw/refs/heads/main/atkcli/atk-cli-windows.zip)
+* [atkcli for MacOS Intel](https://github.com/fiskalizimi/pos-csharp/raw/refs/heads/main/atkcli/atk-cli-macos-intel.zip)
+* [atkcli for MacOS M1/M2](https://github.com/fiskalizimi/pos-csharp/raw/refs/heads/main/atkcli/atk-cli-macos-apple-silicon.zip)
+* [atkcli for Linux](https://github.com/fiskalizimi/pos-csharp/raw/refs/heads/main/atkcli/atk-linux.zip)
 
 
 ## Digital Signing ##
