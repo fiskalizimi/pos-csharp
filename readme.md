@@ -356,6 +356,47 @@ public static string SignCitizenCoupon(CitizenCoupon citizenCoupon, ISigner sign
 
 ### Sending Citizen Coupons ###
 
+QR Code will be scanned by the Citizen Mobile App, which in turn will send the data to the Fiscalization System for verification. This method mimics the Citizen Mobile App, and it is used for testing purposes. The SendQrCode method sends the serialized and signed citizen coupon to the fiscalization service.    
+
+This is how you prepare and submit the request:
+
+```
+public static async Task SendQrCode()
+{
+    var builder = new ModelBuilder();
+    var signer = new Signer(PrivateKeyPem);
+    var citizenCoupon = builder.GetCitizenCoupon();
+    var qrCode = SignCitizenCoupon(citizenCoupon, signer);
+
+    var request = new { citizen_id = 1, qr_code = qrCode };
+    var response = await new HttpClient().PostAsJsonAsync(url, request);
+    response.EnsureSuccessStatusCode();
+}
+```
+
 ### Sending POS Coupons ###
 
+Similar to citizen coupons, you can send POS coupons with the SendPosCoupon method:
+
+```
+public static async Task SendPosCoupon()
+{
+    var builder = new ModelBuilder();
+    var signer = new Signer(PrivateKeyPem);
+    var posCoupon = builder.GetPosCoupon();
+    var (coupon, signature) = SignPosCoupon(posCoupon, signer);
+
+    var request = new { details = coupon, signature = signature };
+    var response = await new HttpClient().PostAsJsonAsync(url, request);
+    response.EnsureSuccessStatusCode();
+}
+```
+
 ## Running the Application ##
+
+To execute the program and send the coupons:
+```
+dotnet run
+```
+
+Make sure to configure the correct URL of the fiscalization service and have a valid ECDSA private key to sign the coupons.
