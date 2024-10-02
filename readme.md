@@ -286,6 +286,70 @@ The return value is a **base64-encoded** signature.
 
 ### QR Code ###
 
+Printed fiscal coupon needs to also have a QR Code that can be scanned by citizens to verify the authenticity of the receipt.
+
+In the Fiscalization System, QR codes are generated based on the serialized and signed data of a Citizen Coupon. The data, once encoded into a QR code, is typically printed on the customer receipt.
+
+#### QR Code Data Structure ####
+
+In this implementation, the QR code contains:
+
+1. The **Base64-encoded** serialized data of the [Citizen Coupon](#citizen-coupon).
+2. The **Base64-encoded** digital signature of that data.
+
+These two parts are combined into a single string, separated by a pipe | symbol, which forms the data to be encoded in the QR code.
+
+#### QR Code Generation in Code ####
+
+The following steps show how the QR code data is generated in the ```Fiskalizimi``` class using the ```CitizenCoupon``` model.
+
+1. **Serialize the CitizenCoupon to Protobuf binary:** This ensures that the receipt data is in a compact binary format.
+   ```
+   byte[] citizenCouponProto = citizenCoupon.ToByteArray();
+   ```
+2. **Base64 encode the Protobuf data:** This converts the binary data into a Base64-encoded string, making it suitable for use in the QR code.
+   ```
+   var base64EncodedProto = Convert.ToBase64String(citizenCouponProto);
+   ```
+3. **Generate a digital signature:** Using the ECDSA private key, sign the Base64-encoded Protobuf data to ensure its authenticity and integrity.
+   ```
+   var base64EncodedBytes = Encoding.UTF8.GetBytes(base64EncodedProto);
+   string signature = signer.SignBytes(base64EncodedBytes);
+   ```
+4. **Combine the data and signature:** The Base64-encoded coupon data and the Base64-encoded signature are concatenated with a pipe | symbol to form the final string, which will be encoded into a QR code.
+   ```
+   string qrCodeString = $"{base64EncodedProto}|{signature}";
+   ```
+5. **Print or display the QR code:** The resulting qrCodeString can now be encoded into a QR code and printed on the receipt or displayed on a screen.
+
+![QR Code](qr.png)
+
+Below is the method in the Fiskalizimi class that generates the QR code string for a Coupon:
+
+```
+public static string SignCitizenCoupon(CitizenCoupon citizenCoupon, ISigner signer)
+{
+    // Serialize the citizen coupon message to protobuf binary
+    byte[] citizenCouponProto = citizenCoupon.ToByteArray();
+
+    // convert the serialized protobuf of citizen coupon to base64 string
+    var base64EncodedProto = Convert.ToBase64String(citizenCouponProto);
+
+    // convert the base64 string of the citizen coupon to byte array
+    var base64EncodedBytes = Encoding.UTF8.GetBytes(base64EncodedProto);
+    
+    // digitally sign the bytes and return the signature
+    string signature = signer.SignBytes(base64EncodedBytes);
+    
+    Console.WriteLine($"Coupon   : {base64EncodedProto}");
+    Console.WriteLine($"signature: {signature}");
+    
+    // Combine the encoded data and signature to create QR Code string and return it
+    string qrCodeString = $"{base64EncodedProto}|{signature}";
+    Console.WriteLine($"qr code  : {qrCodeString}");
+    return qrCodeString;
+}
+```
 
 
 ## Sending Data to Fiscalization Service ##
