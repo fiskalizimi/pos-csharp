@@ -12,6 +12,7 @@ This repository provides a C# implementation for integrating with a fiscalizatio
 - [Model Explanation](#model-explanation)
     - [Citizen Coupon](#citizen-coupon)
     - [POS Coupon](#pos-coupon)
+- [PKI Key Generation](#key-generation)
 - [Digital Signing](#digital-signing)
     - [QR Code generation](#qr-code) 
 - [Sending Data to Fiscalization Service](#sending-data-to-fiscalization-service)
