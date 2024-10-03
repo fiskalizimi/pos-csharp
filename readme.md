@@ -346,8 +346,6 @@ The return value is a **base64-encoded** signature.
 We have also provided a DLL that is used to digitally sign a string and return a Base64 string of the signature. You can utilize it in a C# application using the ```DllImport``` 
 attribute to call the external method from the DLL. The DLL exposes a function called ```DigitallySign```, which takes a message and a private key as inputs and returns a digitally signed Base64 string.
 
-The steps below show how to use the provided DLL (located in ```dll``` folder) for digital signing:
-
 The class ```DllImporter``` shows the interaction with an provided external DLL to perform digital signing of a message which can be a base64 string encoding of protobuf representation of 
 either [PosCoupon](#pos-coupon) or [CitizenCoupon](#citizen-coupon) that is used in [QR Code](#qr-code).
 
