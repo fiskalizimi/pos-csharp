@@ -16,6 +16,8 @@ This repository provides a C# implementation for integrating with a fiscalizatio
     - [POS Coupon](#pos-coupon)
 - [PKI Key Generation](#key-generation)
 - [Digital Signing](#digital-signing)
+    - [Steps to generate digital signature](steps-to-generate-digital-signature)
+    - [Using provided DLL to digitally sign strings](using-provided-dll-to-digitally-sign-strings)
     - [QR Code generation](#qr-code) 
 - [Sending Data to Fiscalization Service](#sending-data-to-fiscalization-service)
     - [Sending Citizen Coupons](#sending-citizen-coupons)
@@ -296,6 +298,8 @@ The fiscalization system requires each coupon to be signed digitally before subm
 
 The digital signature is generated using a private key, and the fiscalization service verifies the signature using a corresponding public key. If the signature is valid, the coupon is considered authentic.
 
+### Steps to generate digital signature ###
+
 The steps that are needed to provide a valid signature are:
 
 1. **Serialization:** First, the coupon (either a Citizen or POS coupon) is serialized into a Protobuf binary format. This format ensures that the data can be transmitted efficiently and consistently.
@@ -336,6 +340,37 @@ public string SignBytes(byte[] data)
 ```
 
 The return value is a **base64-encoded** signature.
+
+### Using provided DLL to digitally sign strings ###
+
+We have also provided a DLL that is used to digitally sign a string and return a Base64 string of the signature. You can utilize it in a C# application using the ```DllImport``` 
+attribute to call the external method from the DLL. The DLL exposes a function called ```DigitallySign```, which takes a message and a private key as inputs and returns a digitally signed Base64 string.
+
+The steps below show how to use the provided DLL (located in ```dll``` folder) for digital signing:
+
+The class ```DllImporter``` shows the interaction with an provided external DLL to perform digital signing of a message which can be a base64 string encoding of protobuf representation of 
+either [PosCoupon](#pos-coupon) or [CitizenCoupon](#citizen-coupon) that is used in [QR Code](#qr-code).
+
+This is done by importing the ```DigitallySign``` function from a native DLL (named ```"signer"```) using the ```[DllImport]``` attribute, 
+which allows unmanaged functions to be called in C#. The external DLL performs the actual cryptographic operation, digitally signing the input message using a private key.
+
+1. **Initialization:** The class is initialized with a private key, provided through the constructor and stored in the ```_key``` field. This private key, in PEM format or another appropriate format, will be used by the external DLL to sign messages.
+2. **Importing the DLL Function:** The DllImport attribute is used to declare the ```DigitallySign``` method. This method is marked as ```extern```, meaning it is defined externally (in the DLL). It takes two byte arrays as parameters: the first is the message to be signed, and the second is the private key. The method returns an ```IntPtr```, which points to the memory location of the resulting digital signature.
+   ```
+   [DllImport("signer", EntryPoint = "DigitallySign")]
+   static extern IntPtr DigitallySign(byte[] msg, byte[] key);
+   ```
+3. **Signing a Message:** The ```SignMessage``` method converts the input message (string) into a byte array using ```Encoding.ASCII.GetBytes()``` and does the same for the private key. These byte arrays are passed to the ```DigitallySign``` function from the DLL. The result from this call is a pointer ```(IntPtr)``` to the digital signature, which is then converted into a Base64-encoded string using ```Marshal.PtrToStringAnsi()```. The method returns this Base64 string, which is the digital signature of the input message.
+   ```
+   public string SignMessage(string msg)
+   {
+       var msgBytes = Encoding.ASCII.GetBytes(msg); // Convert message to bytes
+       var result = DigitallySign(msgBytes, Encoding.ASCII.GetBytes(_key)); // Call DLL method
+       var signature = Marshal.PtrToStringAnsi(result); // Convert result to string
+       return signature; // Return the signature
+   }
+   ```
+   
 
 ### QR Code ###
 
