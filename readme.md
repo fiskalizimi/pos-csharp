@@ -10,7 +10,7 @@ This repository provides a C# implementation for integrating with a fiscalizatio
     - [Installation](#installation)
 - [Generating PROTOBUF models](#generating-protobuf-models)
   - [Manually generating Models](#manually-generating-models)
-  - [Let .NET generate models automatically](#let-.net-generate-models-automatically)
+  - [Let .NET generate models automatically](#let-net-generate-models-automatically)
 - [Model Explanation](#model-explanation)
     - [Citizen Coupon](#citizen-coupon)
     - [POS Coupon](#pos-coupon)
