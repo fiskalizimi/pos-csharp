@@ -349,7 +349,7 @@ attribute to call the external method from the DLL. The DLL exposes a function c
 The class ```DllImporter``` shows the interaction with provided external DLL to perform digital signing of a message which can be a base64 string encoding of protobuf representation of 
 either [PosCoupon](#pos-coupon) or [CitizenCoupon](#citizen-coupon) that is used in [QR Code](#qr-code).
 
-This is done by importing the ```DigitallySign``` function from a native DLL (named ```"signer"```) using the ```[DllImport]``` attribute, 
+This is done by importing the ```DigitallySign``` function from a native DLL (named "```signer```") using the ```[DllImport]``` attribute, 
 which allows unmanaged functions to be called in C#. The external DLL performs the actual cryptographic operation, digitally signing the input message using a private key.
 
 1. **Initialization:** The class is initialized with a private key, provided through the constructor and stored in the ```_key``` field. This private key, in PEM format or another appropriate format, will be used by the external DLL to sign messages.
