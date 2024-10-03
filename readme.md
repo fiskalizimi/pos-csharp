@@ -283,7 +283,7 @@ To extract certificate and private key in PEM format, using the command below:
 
 the last command will create another two files in the folder ```private-key.pem``` and ```signed-certificate.pem```
 
-**WARNING !** Makes sure to keep private key safe.
+**WARNING !** Make sure to keep private key safe.
 
 ## Digital Signing ##
 
