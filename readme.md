@@ -57,7 +57,54 @@ Before integrating the system, ensure you have the following installed:
 
 ### Manually generating Models ###
 
+To manually generate C# classes from a ```.proto``` file using ```protoc```, the Protobuf compiler, you’ll first need to have the Protobuf tools 
+installed on your system. The ```protoc``` compiler is responsible for compiling ```.proto``` files into language-specific classes, including C#. Follow these steps to generate C# classes manually:
+
+1. **Install the Protobuf compiler:** If you don't have ```protoc``` installed, download and install it from the [official Protobuf releases](https://github.com/protocolbuffers/protobuf/releases). Ensure the executable is in your system's PATH.
+2. **Download the C# plugin:** You need to download the Protobuf C# plugin if it's not bundled with ```protoc```. It can be found in the official releases or by installing the ```Grpc.Tools``` package in a .NET project.
+3. **Run the protoc command:** Use the following command in your terminal to generate the C# classes from the ```models.proto``` file. Replace paths accordingly for your setup:
+   ```
+   protoc --proto_path=./path/to/protos --csharp_out=./path/to/output ./path/to/protos/models.proto
+   ```
+   *  ```--proto_path=./path/to/protos``` : Specifies the directory where your .proto files are located.
+   * ```--csharp_out=./path/to/output``` : Specifies the directory where the generated C# files should be saved.
+   * ```models.proto``` : The ```.proto``` file you are compiling.
+4. **Generated C# classes:** After running the ```protoc``` command, it will generate C# classes corresponding to the Protobuf messages and enums defined in the ```models.proto``` file. The classes will contain methods like ```ParseFrom()```, ```ToByteArray()```, and properties representing each field in the messages.
+5. **Include the generated classes in your project:** After generating the C# files, you can manually add them to your .NET project by copying them into your solution’s directory or directly referencing them in your project’s code.
+
 ### Let .NET generate models automatically
+
+To generate Protobuf models in .NET 8.0 from the ```models.proto``` file, you'll first need to install the **Google.Protobuf** package 
+and the **Grpc.Tools** package, which provides the necessary tooling to compile ```.proto``` files into C# classes. This process leverages the Protobuf compiler (protoc), 
+which takes the ```.proto``` definition and generates C# model classes for use in your .NET project.
+
+Here are the steps to generate Protobuf models:
+
+1. **Install the required NuGet packages:**
+
+   * Install Google.Protobuf to use Protobuf runtime classes.
+   * Install Grpc.Tools to compile .proto files.
+
+    Run the following command in your project:
+
+    ```
+    dotnet add package Google.Protobuf
+    dotnet add package Grpc.Tools
+    ```
+
+2. **Add the .proto file to your project:** Place your ```.proto``` file (in our case ```models.proto```) inside your project directory, usually in a ```Protos``` folder for organization. In the ```.csproj``` file, reference the ```.proto``` file to instruct the compiler to generate the necessary C# classes.
+3. **Modify your .csproj file** to include Protobuf file generation instructions:
+   ```
+   <ItemGroup>
+       <Protobuf Include="Protos/fiscal.proto" GrpcServices="None" />
+   </ItemGroup>
+   ```
+   Setting ```GrpcServices="None"``` ensures that only data models are generated, without gRPC service code, since we are only interested in the models (e.g., ```PosCoupon```, ```CitizenCoupon```, ```Payment```, etc.).
+4. **Build the project:** Run the following command to compile the ```.proto``` file and generate the C# classes:
+   ```
+   dotnet build
+   ``` 
+   This will automatically generate C# classes that correspond to the Protobuf messages (like ```PosCoupon```, ```CitizenCoupon```, ```CouponItem```, etc.) in your ```.proto``` file.
 
 ## Model Explanation ##
 
