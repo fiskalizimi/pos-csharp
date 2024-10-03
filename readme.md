@@ -59,7 +59,7 @@ Before integrating the system, ensure you have the following installed:
 
 ### Manually generating Models ###
 
-To manually generate C# classes from a ```.proto``` file using ```protoc```, the Protobuf compiler, you’ll first need to have the Protobuf tools 
+To manually generate C# classes from a ```.proto``` file using ```protoc```, the Protobuf compiler, you will first need to have the Protobuf tools 
 installed on your system. The ```protoc``` compiler is responsible for compiling ```.proto``` files into language-specific classes, including C#. Follow these steps to generate C# classes manually:
 
 1. **Install the Protobuf compiler:** If you don't have ```protoc``` installed, download and install it from the [official Protobuf releases](https://github.com/protocolbuffers/protobuf/releases). Ensure the executable is in your system's PATH.
@@ -151,7 +151,7 @@ The Citizen Coupon includes:
 * **TaxGroups** is an array of ```TaxGroup``` objects. Each ```TaxGroup``` object represents the details about tax category 
 * **TotalTax** is the amount of the tax in total that customer will have to pay
 
-**NOTE:** These details must match the [POS Coupon](#pos-coupon) details, otherwise the coupon will be market as ```FAILED VERIFICATION``` !
+**NOTE:** These details must match the [POS Coupon](#pos-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
 
 
 ### POS Coupon ###
@@ -216,7 +216,7 @@ The POS Coupon includes:
 * **TotalTax** is the amount of the tax in total that customer will have to pay
 * **TotalNoTax** is the total amount without tax that customer will have to pay
 
-**NOTE:** These details must match the [Citizen Coupon](#citizen-coupon) details, otherwise the coupon will be market as ```FAILED VERIFICATION``` !
+**NOTE:** These details must match the [Citizen Coupon](#citizen-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
 
 ## Key Generation ##
 
@@ -233,13 +233,13 @@ To download the tool on you machine, click on one of the links below (depending 
 * [atkcli for MacOS M1/M2](https://github.com/fiskalizimi/pos-csharp/raw/refs/heads/main/atkcli/atk-cli-macos-apple-silicon.zip)
 * [atkcli for Linux](https://github.com/fiskalizimi/pos-csharp/raw/refs/heads/main/atkcli/atk-linux.zip)
 
-Once you have downloaded the atkcli tool, and extracted/unzipped it to a folder, then you need to use the following command by chaning the values in curly braces and providing valid data:
+Once you have downloaded the atkcli tool, and extracted/unzipped it to a folder, then you need to use the following command by changing the values in curly braces and providing valid data:
 
 ```
 ./atkcli onboard -b "{businesID}" -f "{fiscalID}" -p "{PosID} -n "{Business name}" -u "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/ca/signcsr"
 ```
 
-For example, if you BusinssID (NUI) is 888234, FiscalID is 3543234 and the business name is "Joe Bloggs Caffee", then the command for POS with id 1 would look like:
+For example, if your BusinessID (NUI) is 888234, FiscalID is 3543234 and the business name is "Joe Bloggs Caffee", then the command for POS with id 1 would look like:
 ```
  ./atkcli onboard -b "888234" -f "3543234" -p "1"  -n "Joe Bloggs Caffee" -u "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/ca/signcsr"
 ```
@@ -300,7 +300,7 @@ The digital signature is generated using a private key, and the fiscalization se
 
 ### Steps to generate digital signature ###
 
-The steps that are needed to provide a valid signature are:
+The steps to provide a valid signature are:
 
 1. **Serialization:** First, the coupon (either a Citizen or POS coupon) is serialized into a Protobuf binary format. This format ensures that the data can be transmitted efficiently and consistently.
    ```
@@ -442,7 +442,8 @@ public static string SignCitizenCoupon(CitizenCoupon citizenCoupon, ISigner sign
 
 ### Sending Citizen Coupons ###
 
-QR Code will be scanned by the Citizen Mobile App, which in turn will send the data to the Fiscalization System for verification. This method mimics the Citizen Mobile App, and it is used for testing purposes. The SendQrCode method sends the serialized and signed citizen coupon to the fiscalization service.    
+QR Code will be scanned by the Citizen Mobile App, which in turn will send the data to the Fiscalization System for verification. 
+This method mimics the Citizen Mobile App, and is used for testing purposes. The SendQrCode method sends the serialized and signed citizen coupon to the fiscalization service.    
 
 This is how you prepare and submit the request:
 
