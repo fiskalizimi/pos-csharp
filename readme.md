@@ -237,12 +237,12 @@ To download the tool on you machine, click on one of the links below (depending 
 Once you have downloaded the atkcli tool, and extracted/unzipped it to a folder, then you need to use the following command by changing the values in curly braces and providing valid data:
 
 ```
-./atkcli onboard -b "{businesID}" -f "{fiscalID}" -p "{PosID} -n "{Business name}" -u "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/ca/signcsr"
+./atkcli onboard -b "{businesID}" -p "{PosID} -n "{Business name}" -u "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/ca/signcsr"
 ```
 
-For example, if your BusinessID (NUI) is 888234, FiscalID is 3543234 and the business name is "Joe Bloggs Caffee", then the command for POS with id 1 would look like:
+For example, if your BusinessID (NUI) is 888234, POS system to be onboarded has 1 as ID, and the business name is "Joe Bloggs Caffee", then the command for POS with id 1 would look like:
 ```
- ./atkcli onboard -b "888234" -f "3543234" -p "1"  -n "Joe Bloggs Caffee" -u "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/ca/signcsr"
+ ./atkcli onboard -b "1234" -p "1"  -n "Joe Bloggs Caffee" -u "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/ca/signcsr"
 ```
 
 if everything went Ok, you should get back a 200 response and a valid certificate, something like:
