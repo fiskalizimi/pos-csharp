@@ -240,7 +240,7 @@ Once you have downloaded the atkcli tool, and extracted/unzipped it to a folder,
 ./atkcli onboard -b "{businesID}" -p "{PosID} -n "{Business name}" -u "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/ca/signcsr"
 ```
 
-For example, if your BusinessID (NUI) is 888234, POS system to be onboarded has 1 as ID, and the business name is "Joe Bloggs Caffee", then the command for POS with id 1 would look like:
+For example, if your BusinessID (NUI) is 888234, and the business name is "Joe Bloggs Caffee", then the command for POS with id 1 would look like:
 ```
  ./atkcli onboard -b "1234" -p "1"  -n "Joe Bloggs Caffee" -u "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/ca/signcsr"
 ```
