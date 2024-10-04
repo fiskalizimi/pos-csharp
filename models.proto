@@ -42,7 +42,7 @@ message TaxGroup {
 
 message PosCoupon {
   uint64 BusinessId = 1;
-  uint64 FiscalId = 2;
+  uint64 VatId = 2;
   uint64 CouponId = 3;
   string Location = 4;
   string OperatorId = 5;
@@ -59,7 +59,7 @@ message PosCoupon {
 
 message CitizenCoupon {
   uint64 BusinessId = 1;
-  uint64 FiscalId = 2;
+  uint64 VatId = 2;
   uint64 CouponId = 3;
   uint64 PosId = 4;
   CouponType Type = 5;
@@ -71,7 +71,7 @@ message CitizenCoupon {
 
 message QrCoupon {
   uint64 BusinessId = 1;
-  uint64 FiscalId = 2;
+  uint64 VatId = 2;
   uint64 CouponId = 3;
   uint64 PosId = 4;
   CouponType Type = 5;

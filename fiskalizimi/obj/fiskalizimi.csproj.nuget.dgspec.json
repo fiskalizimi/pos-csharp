@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/fitims/dev/rks/mf/fiskalizimi/public/pos-csharp/fiskalizimi/fiskalizimi.csproj": {}
+  },
+  "projects": {
+    "/home/fitims/dev/rks/mf/fiskalizimi/public/pos-csharp/fiskalizimi/fiskalizimi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/fitims/dev/rks/mf/fiskalizimi/public/pos-csharp/fiskalizimi/fiskalizimi.csproj",
+        "projectName": "fiskalizimi",
+        "projectPath": "/home/fitims/dev/rks/mf/fiskalizimi/public/pos-csharp/fiskalizimi/fiskalizimi.csproj",
+        "packagesPath": "/home/fitims/.nuget/packages/",
+        "outputPath": "/home/fitims/dev/rks/mf/fiskalizimi/public/pos-csharp/fiskalizimi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/fitims/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.28.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/fitims/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -29,36 +29,36 @@ namespace Atk {
             "BCABKAMSDwoHVGF4UmF0ZRgFIAEoCRIMCgRUeXBlGAYgASgJIjkKB1BheW1l",
             "bnQSHgoEVHlwZRgBIAEoDjIQLmF0ay5QYXltZW50VHlwZRIOCgZBbW91bnQY",
             "AiABKAMiQgoIVGF4R3JvdXASDwoHVGF4UmF0ZRgBIAEoCRITCgtUb3RhbEZv",
-            "clRheBgCIAEoAxIQCghUb3RhbFRheBgDIAEoAyK8AgoJUG9zQ291cG9uEhIK",
-            "CkJ1c2luZXNzSWQYASABKAQSEAoIRmlzY2FsSWQYAiABKAQSEAoIQ291cG9u",
-            "SWQYAyABKAQSEAoITG9jYXRpb24YBCABKAkSEgoKT3BlcmF0b3JJZBgFIAEo",
-            "CRINCgVQb3NJZBgGIAEoBBIdCgRUeXBlGAcgASgOMg8uYXRrLkNvdXBvblR5",
-            "cGUSDAoEVGltZRgIIAEoAxIeCgVJdGVtcxgJIAMoCzIPLmF0ay5Db3Vwb25J",
-            "dGVtEh4KCFBheW1lbnRzGAogAygLMgwuYXRrLlBheW1lbnQSDQoFVG90YWwY",
-            "CyABKAMSIAoJVGF4R3JvdXBzGAwgAygLMg0uYXRrLlRheEdyb3VwEhAKCFRv",
-            "dGFsVGF4GA0gASgDEhIKClRvdGFsTm9UYXgYDiABKAMixgEKDUNpdGl6ZW5D",
-            "b3Vwb24SEgoKQnVzaW5lc3NJZBgBIAEoBBIQCghGaXNjYWxJZBgCIAEoBBIQ",
-            "CghDb3Vwb25JZBgDIAEoBBINCgVQb3NJZBgEIAEoBBIdCgRUeXBlGAUgASgO",
-            "Mg8uYXRrLkNvdXBvblR5cGUSDAoEVGltZRgGIAEoAxINCgVUb3RhbBgHIAEo",
-            "AxIgCglUYXhHcm91cHMYCCADKAsyDS5hdGsuVGF4R3JvdXASEAoIVG90YWxU",
-            "YXgYCSABKAMiwQEKCFFyQ291cG9uEhIKCkJ1c2luZXNzSWQYASABKAQSEAoI",
-            "RmlzY2FsSWQYAiABKAQSEAoIQ291cG9uSWQYAyABKAQSDQoFUG9zSWQYBCAB",
-            "KAQSHQoEVHlwZRgFIAEoDjIPLmF0ay5Db3Vwb25UeXBlEgwKBFRpbWUYBiAB",
-            "KAMSDQoFVG90YWwYByABKAMSIAoJVGF4R3JvdXBzGAggAygLMg0uYXRrLlRh",
-            "eEdyb3VwEhAKCFRvdGFsVGF4GAkgASgDKi4KCkNvdXBvblR5cGUSCAoEU2Fs",
-            "ZRAAEgoKBkNhbmNlbBABEgoKBlJldHVybhACKmwKC1BheW1lbnRUeXBlEgsK",
-            "B1Vua25vd24QABIICgRDYXNoEAESDgoKQ3JlZGl0Q2FyZBACEgsKB1ZvdWNo",
-            "ZXIQAxIKCgZDaGVxdWUQBBISCg5DcnlwdG9DdXJyZW5jeRAFEgkKBU90aGVy",
-            "EAZCCVoHLi9wcm90b2IGcHJvdG8z"));
+            "clRheBgCIAEoAxIQCghUb3RhbFRheBgDIAEoAyK5AgoJUG9zQ291cG9uEhIK",
+            "CkJ1c2luZXNzSWQYASABKAQSDQoFVmF0SWQYAiABKAQSEAoIQ291cG9uSWQY",
+            "AyABKAQSEAoITG9jYXRpb24YBCABKAkSEgoKT3BlcmF0b3JJZBgFIAEoCRIN",
+            "CgVQb3NJZBgGIAEoBBIdCgRUeXBlGAcgASgOMg8uYXRrLkNvdXBvblR5cGUS",
+            "DAoEVGltZRgIIAEoAxIeCgVJdGVtcxgJIAMoCzIPLmF0ay5Db3Vwb25JdGVt",
+            "Eh4KCFBheW1lbnRzGAogAygLMgwuYXRrLlBheW1lbnQSDQoFVG90YWwYCyAB",
+            "KAMSIAoJVGF4R3JvdXBzGAwgAygLMg0uYXRrLlRheEdyb3VwEhAKCFRvdGFs",
+            "VGF4GA0gASgDEhIKClRvdGFsTm9UYXgYDiABKAMiwwEKDUNpdGl6ZW5Db3Vw",
+            "b24SEgoKQnVzaW5lc3NJZBgBIAEoBBINCgVWYXRJZBgCIAEoBBIQCghDb3Vw",
+            "b25JZBgDIAEoBBINCgVQb3NJZBgEIAEoBBIdCgRUeXBlGAUgASgOMg8uYXRr",
+            "LkNvdXBvblR5cGUSDAoEVGltZRgGIAEoAxINCgVUb3RhbBgHIAEoAxIgCglU",
+            "YXhHcm91cHMYCCADKAsyDS5hdGsuVGF4R3JvdXASEAoIVG90YWxUYXgYCSAB",
+            "KAMivgEKCFFyQ291cG9uEhIKCkJ1c2luZXNzSWQYASABKAQSDQoFVmF0SWQY",
+            "AiABKAQSEAoIQ291cG9uSWQYAyABKAQSDQoFUG9zSWQYBCABKAQSHQoEVHlw",
+            "ZRgFIAEoDjIPLmF0ay5Db3Vwb25UeXBlEgwKBFRpbWUYBiABKAMSDQoFVG90",
+            "YWwYByABKAMSIAoJVGF4R3JvdXBzGAggAygLMg0uYXRrLlRheEdyb3VwEhAK",
+            "CFRvdGFsVGF4GAkgASgDKi4KCkNvdXBvblR5cGUSCAoEU2FsZRAAEgoKBkNh",
+            "bmNlbBABEgoKBlJldHVybhACKmwKC1BheW1lbnRUeXBlEgsKB1Vua25vd24Q",
+            "ABIICgRDYXNoEAESDgoKQ3JlZGl0Q2FyZBACEgsKB1ZvdWNoZXIQAxIKCgZD",
+            "aGVxdWUQBBISCg5DcnlwdG9DdXJyZW5jeRAFEgkKBU90aGVyEAZCCVoHLi9w",
+            "cm90b2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Atk.CouponType), typeof(global::Atk.PaymentType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CouponItem), global::Atk.CouponItem.Parser, new[]{ "Name", "Price", "Quantity", "Total", "TaxRate", "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.Payment), global::Atk.Payment.Parser, new[]{ "Type", "Amount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.TaxGroup), global::Atk.TaxGroup.Parser, new[]{ "TaxRate", "TotalForTax", "TotalTax" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.PosCoupon), global::Atk.PosCoupon.Parser, new[]{ "BusinessId", "FiscalId", "CouponId", "Location", "OperatorId", "PosId", "Type", "Time", "Items", "Payments", "Total", "TaxGroups", "TotalTax", "TotalNoTax" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CitizenCoupon), global::Atk.CitizenCoupon.Parser, new[]{ "BusinessId", "FiscalId", "CouponId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.QrCoupon), global::Atk.QrCoupon.Parser, new[]{ "BusinessId", "FiscalId", "CouponId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.PosCoupon), global::Atk.PosCoupon.Parser, new[]{ "BusinessId", "VatId", "CouponId", "Location", "OperatorId", "PosId", "Type", "Time", "Items", "Payments", "Total", "TaxGroups", "TotalTax", "TotalNoTax" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CitizenCoupon), global::Atk.CitizenCoupon.Parser, new[]{ "BusinessId", "VatId", "CouponId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.QrCoupon), global::Atk.QrCoupon.Parser, new[]{ "BusinessId", "VatId", "CouponId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1010,7 +1010,7 @@ namespace Atk {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PosCoupon(PosCoupon other) : this() {
       businessId_ = other.businessId_;
-      fiscalId_ = other.fiscalId_;
+      vatId_ = other.vatId_;
       couponId_ = other.couponId_;
       location_ = other.location_;
       operatorId_ = other.operatorId_;
@@ -1044,15 +1044,15 @@ namespace Atk {
       }
     }
 
-    /// <summary>Field number for the "FiscalId" field.</summary>
-    public const int FiscalIdFieldNumber = 2;
-    private ulong fiscalId_;
+    /// <summary>Field number for the "VatId" field.</summary>
+    public const int VatIdFieldNumber = 2;
+    private ulong vatId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong FiscalId {
-      get { return fiscalId_; }
+    public ulong VatId {
+      get { return vatId_; }
       set {
-        fiscalId_ = value;
+        vatId_ = value;
       }
     }
 
@@ -1213,7 +1213,7 @@ namespace Atk {
         return true;
       }
       if (BusinessId != other.BusinessId) return false;
-      if (FiscalId != other.FiscalId) return false;
+      if (VatId != other.VatId) return false;
       if (CouponId != other.CouponId) return false;
       if (Location != other.Location) return false;
       if (OperatorId != other.OperatorId) return false;
@@ -1234,7 +1234,7 @@ namespace Atk {
     public override int GetHashCode() {
       int hash = 1;
       if (BusinessId != 0UL) hash ^= BusinessId.GetHashCode();
-      if (FiscalId != 0UL) hash ^= FiscalId.GetHashCode();
+      if (VatId != 0UL) hash ^= VatId.GetHashCode();
       if (CouponId != 0UL) hash ^= CouponId.GetHashCode();
       if (Location.Length != 0) hash ^= Location.GetHashCode();
       if (OperatorId.Length != 0) hash ^= OperatorId.GetHashCode();
@@ -1269,9 +1269,9 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (FiscalId != 0UL) {
+      if (VatId != 0UL) {
         output.WriteRawTag(16);
-        output.WriteUInt64(FiscalId);
+        output.WriteUInt64(VatId);
       }
       if (CouponId != 0UL) {
         output.WriteRawTag(24);
@@ -1326,9 +1326,9 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (FiscalId != 0UL) {
+      if (VatId != 0UL) {
         output.WriteRawTag(16);
-        output.WriteUInt64(FiscalId);
+        output.WriteUInt64(VatId);
       }
       if (CouponId != 0UL) {
         output.WriteRawTag(24);
@@ -1382,8 +1382,8 @@ namespace Atk {
       if (BusinessId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BusinessId);
       }
-      if (FiscalId != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(FiscalId);
+      if (VatId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VatId);
       }
       if (CouponId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CouponId);
@@ -1430,8 +1430,8 @@ namespace Atk {
       if (other.BusinessId != 0UL) {
         BusinessId = other.BusinessId;
       }
-      if (other.FiscalId != 0UL) {
-        FiscalId = other.FiscalId;
+      if (other.VatId != 0UL) {
+        VatId = other.VatId;
       }
       if (other.CouponId != 0UL) {
         CouponId = other.CouponId;
@@ -1487,7 +1487,7 @@ namespace Atk {
             break;
           }
           case 16: {
-            FiscalId = input.ReadUInt64();
+            VatId = input.ReadUInt64();
             break;
           }
           case 24: {
@@ -1562,7 +1562,7 @@ namespace Atk {
             break;
           }
           case 16: {
-            FiscalId = input.ReadUInt64();
+            VatId = input.ReadUInt64();
             break;
           }
           case 24: {
@@ -1656,7 +1656,7 @@ namespace Atk {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CitizenCoupon(CitizenCoupon other) : this() {
       businessId_ = other.businessId_;
-      fiscalId_ = other.fiscalId_;
+      vatId_ = other.vatId_;
       couponId_ = other.couponId_;
       posId_ = other.posId_;
       type_ = other.type_;
@@ -1685,15 +1685,15 @@ namespace Atk {
       }
     }
 
-    /// <summary>Field number for the "FiscalId" field.</summary>
-    public const int FiscalIdFieldNumber = 2;
-    private ulong fiscalId_;
+    /// <summary>Field number for the "VatId" field.</summary>
+    public const int VatIdFieldNumber = 2;
+    private ulong vatId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong FiscalId {
-      get { return fiscalId_; }
+    public ulong VatId {
+      get { return vatId_; }
       set {
-        fiscalId_ = value;
+        vatId_ = value;
       }
     }
 
@@ -1796,7 +1796,7 @@ namespace Atk {
         return true;
       }
       if (BusinessId != other.BusinessId) return false;
-      if (FiscalId != other.FiscalId) return false;
+      if (VatId != other.VatId) return false;
       if (CouponId != other.CouponId) return false;
       if (PosId != other.PosId) return false;
       if (Type != other.Type) return false;
@@ -1812,7 +1812,7 @@ namespace Atk {
     public override int GetHashCode() {
       int hash = 1;
       if (BusinessId != 0UL) hash ^= BusinessId.GetHashCode();
-      if (FiscalId != 0UL) hash ^= FiscalId.GetHashCode();
+      if (VatId != 0UL) hash ^= VatId.GetHashCode();
       if (CouponId != 0UL) hash ^= CouponId.GetHashCode();
       if (PosId != 0UL) hash ^= PosId.GetHashCode();
       if (Type != global::Atk.CouponType.Sale) hash ^= Type.GetHashCode();
@@ -1842,9 +1842,9 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (FiscalId != 0UL) {
+      if (VatId != 0UL) {
         output.WriteRawTag(16);
-        output.WriteUInt64(FiscalId);
+        output.WriteUInt64(VatId);
       }
       if (CouponId != 0UL) {
         output.WriteRawTag(24);
@@ -1885,9 +1885,9 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (FiscalId != 0UL) {
+      if (VatId != 0UL) {
         output.WriteRawTag(16);
-        output.WriteUInt64(FiscalId);
+        output.WriteUInt64(VatId);
       }
       if (CouponId != 0UL) {
         output.WriteRawTag(24);
@@ -1927,8 +1927,8 @@ namespace Atk {
       if (BusinessId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BusinessId);
       }
-      if (FiscalId != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(FiscalId);
+      if (VatId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VatId);
       }
       if (CouponId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CouponId);
@@ -1964,8 +1964,8 @@ namespace Atk {
       if (other.BusinessId != 0UL) {
         BusinessId = other.BusinessId;
       }
-      if (other.FiscalId != 0UL) {
-        FiscalId = other.FiscalId;
+      if (other.VatId != 0UL) {
+        VatId = other.VatId;
       }
       if (other.CouponId != 0UL) {
         CouponId = other.CouponId;
@@ -2010,7 +2010,7 @@ namespace Atk {
             break;
           }
           case 16: {
-            FiscalId = input.ReadUInt64();
+            VatId = input.ReadUInt64();
             break;
           }
           case 24: {
@@ -2065,7 +2065,7 @@ namespace Atk {
             break;
           }
           case 16: {
-            FiscalId = input.ReadUInt64();
+            VatId = input.ReadUInt64();
             break;
           }
           case 24: {
@@ -2139,7 +2139,7 @@ namespace Atk {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QrCoupon(QrCoupon other) : this() {
       businessId_ = other.businessId_;
-      fiscalId_ = other.fiscalId_;
+      vatId_ = other.vatId_;
       couponId_ = other.couponId_;
       posId_ = other.posId_;
       type_ = other.type_;
@@ -2168,15 +2168,15 @@ namespace Atk {
       }
     }
 
-    /// <summary>Field number for the "FiscalId" field.</summary>
-    public const int FiscalIdFieldNumber = 2;
-    private ulong fiscalId_;
+    /// <summary>Field number for the "VatId" field.</summary>
+    public const int VatIdFieldNumber = 2;
+    private ulong vatId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong FiscalId {
-      get { return fiscalId_; }
+    public ulong VatId {
+      get { return vatId_; }
       set {
-        fiscalId_ = value;
+        vatId_ = value;
       }
     }
 
@@ -2279,7 +2279,7 @@ namespace Atk {
         return true;
       }
       if (BusinessId != other.BusinessId) return false;
-      if (FiscalId != other.FiscalId) return false;
+      if (VatId != other.VatId) return false;
       if (CouponId != other.CouponId) return false;
       if (PosId != other.PosId) return false;
       if (Type != other.Type) return false;
@@ -2295,7 +2295,7 @@ namespace Atk {
     public override int GetHashCode() {
       int hash = 1;
       if (BusinessId != 0UL) hash ^= BusinessId.GetHashCode();
-      if (FiscalId != 0UL) hash ^= FiscalId.GetHashCode();
+      if (VatId != 0UL) hash ^= VatId.GetHashCode();
       if (CouponId != 0UL) hash ^= CouponId.GetHashCode();
       if (PosId != 0UL) hash ^= PosId.GetHashCode();
       if (Type != global::Atk.CouponType.Sale) hash ^= Type.GetHashCode();
@@ -2325,9 +2325,9 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (FiscalId != 0UL) {
+      if (VatId != 0UL) {
         output.WriteRawTag(16);
-        output.WriteUInt64(FiscalId);
+        output.WriteUInt64(VatId);
       }
       if (CouponId != 0UL) {
         output.WriteRawTag(24);
@@ -2368,9 +2368,9 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (FiscalId != 0UL) {
+      if (VatId != 0UL) {
         output.WriteRawTag(16);
-        output.WriteUInt64(FiscalId);
+        output.WriteUInt64(VatId);
       }
       if (CouponId != 0UL) {
         output.WriteRawTag(24);
@@ -2410,8 +2410,8 @@ namespace Atk {
       if (BusinessId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BusinessId);
       }
-      if (FiscalId != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(FiscalId);
+      if (VatId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VatId);
       }
       if (CouponId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CouponId);
@@ -2447,8 +2447,8 @@ namespace Atk {
       if (other.BusinessId != 0UL) {
         BusinessId = other.BusinessId;
       }
-      if (other.FiscalId != 0UL) {
-        FiscalId = other.FiscalId;
+      if (other.VatId != 0UL) {
+        VatId = other.VatId;
       }
       if (other.CouponId != 0UL) {
         CouponId = other.CouponId;
@@ -2493,7 +2493,7 @@ namespace Atk {
             break;
           }
           case 16: {
-            FiscalId = input.ReadUInt64();
+            VatId = input.ReadUInt64();
             break;
           }
           case 24: {
@@ -2548,7 +2548,7 @@ namespace Atk {
             break;
           }
           case 16: {
-            FiscalId = input.ReadUInt64();
+            VatId = input.ReadUInt64();
             break;
           }
           case 24: {

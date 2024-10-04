@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+nOQkhVzUQs=",
+  "success": true,
+  "projectFilePath": "/home/fitims/dev/rks/mf/fiskalizimi/public/pos-csharp/fiskalizimi/fiskalizimi.csproj",
+  "expectedPackageFiles": [
+    "/home/fitims/.nuget/packages/google.protobuf/3.28.2/google.protobuf.3.28.2.nupkg.sha512"
+  ],
+  "logs": []
+}
