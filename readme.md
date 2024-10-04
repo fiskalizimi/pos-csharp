@@ -99,7 +99,7 @@ Here are the steps to generate Protobuf models:
 3. **Modify your .csproj file** to include Protobuf file generation instructions:
    ```
    <ItemGroup>
-       <Protobuf Include="Protos/fiscal.proto" GrpcServices="None" />
+       <Protobuf Include="Protos/models.proto" GrpcServices="None" />
    </ItemGroup>
    ```
    Setting ```GrpcServices="None"``` ensures that only data models are generated, without gRPC service code, since we are only interested in the models (e.g., ```PosCoupon```, ```CitizenCoupon```, ```Payment```, etc.).
