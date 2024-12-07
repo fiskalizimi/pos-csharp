@@ -24,41 +24,40 @@ namespace Atk {
     static ModelsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgxtb2RlbHMucHJvdG8SA2F0ayJpCgpDb3Vwb25JdGVtEgwKBE5hbWUYASAB",
-            "KAkSDQoFUHJpY2UYAiABKAMSEAoIUXVhbnRpdHkYAyABKAISDQoFVG90YWwY",
-            "BCABKAMSDwoHVGF4UmF0ZRgFIAEoCRIMCgRUeXBlGAYgASgJIjkKB1BheW1l",
-            "bnQSHgoEVHlwZRgBIAEoDjIQLmF0ay5QYXltZW50VHlwZRIOCgZBbW91bnQY",
-            "AiABKAMiQgoIVGF4R3JvdXASDwoHVGF4UmF0ZRgBIAEoCRITCgtUb3RhbEZv",
-            "clRheBgCIAEoAxIQCghUb3RhbFRheBgDIAEoAyK5AgoJUG9zQ291cG9uEhIK",
-            "CkJ1c2luZXNzSWQYASABKAQSDQoFVmF0SWQYAiABKAQSEAoIQ291cG9uSWQY",
-            "AyABKAQSEAoITG9jYXRpb24YBCABKAkSEgoKT3BlcmF0b3JJZBgFIAEoCRIN",
-            "CgVQb3NJZBgGIAEoBBIdCgRUeXBlGAcgASgOMg8uYXRrLkNvdXBvblR5cGUS",
-            "DAoEVGltZRgIIAEoAxIeCgVJdGVtcxgJIAMoCzIPLmF0ay5Db3Vwb25JdGVt",
-            "Eh4KCFBheW1lbnRzGAogAygLMgwuYXRrLlBheW1lbnQSDQoFVG90YWwYCyAB",
-            "KAMSIAoJVGF4R3JvdXBzGAwgAygLMg0uYXRrLlRheEdyb3VwEhAKCFRvdGFs",
-            "VGF4GA0gASgDEhIKClRvdGFsTm9UYXgYDiABKAMiwwEKDUNpdGl6ZW5Db3Vw",
-            "b24SEgoKQnVzaW5lc3NJZBgBIAEoBBINCgVWYXRJZBgCIAEoBBIQCghDb3Vw",
-            "b25JZBgDIAEoBBINCgVQb3NJZBgEIAEoBBIdCgRUeXBlGAUgASgOMg8uYXRr",
-            "LkNvdXBvblR5cGUSDAoEVGltZRgGIAEoAxINCgVUb3RhbBgHIAEoAxIgCglU",
-            "YXhHcm91cHMYCCADKAsyDS5hdGsuVGF4R3JvdXASEAoIVG90YWxUYXgYCSAB",
-            "KAMivgEKCFFyQ291cG9uEhIKCkJ1c2luZXNzSWQYASABKAQSDQoFVmF0SWQY",
-            "AiABKAQSEAoIQ291cG9uSWQYAyABKAQSDQoFUG9zSWQYBCABKAQSHQoEVHlw",
-            "ZRgFIAEoDjIPLmF0ay5Db3Vwb25UeXBlEgwKBFRpbWUYBiABKAMSDQoFVG90",
-            "YWwYByABKAMSIAoJVGF4R3JvdXBzGAggAygLMg0uYXRrLlRheEdyb3VwEhAK",
-            "CFRvdGFsVGF4GAkgASgDKi4KCkNvdXBvblR5cGUSCAoEU2FsZRAAEgoKBkNh",
-            "bmNlbBABEgoKBlJldHVybhACKmwKC1BheW1lbnRUeXBlEgsKB1Vua25vd24Q",
-            "ABIICgRDYXNoEAESDgoKQ3JlZGl0Q2FyZBACEgsKB1ZvdWNoZXIQAxIKCgZD",
-            "aGVxdWUQBBISCg5DcnlwdG9DdXJyZW5jeRAFEgkKBU90aGVyEAZCCVoHLi9w",
-            "cm90b2IGcHJvdG8z"));
+            "Cgxtb2RlbHMucHJvdG8SA2F0ayJ3CgpDb3Vwb25JdGVtEgwKBE5hbWUYASAB",
+            "KAkSDQoFUHJpY2UYAiABKAMSEAoIUXVhbnRpdHkYAyABKAISDAoEVW5pdBgE",
+            "IAEoCRINCgVUb3RhbBgFIAEoAxIPCgdUYXhSYXRlGAYgASgJEgwKBFR5cGUY",
+            "ByABKAkiOQoHUGF5bWVudBIeCgRUeXBlGAEgASgOMhAuYXRrLlBheW1lbnRU",
+            "eXBlEg4KBkFtb3VudBgCIAEoAyJCCghUYXhHcm91cBIPCgdUYXhSYXRlGAEg",
+            "ASgJEhMKC1RvdGFsRm9yVGF4GAIgASgDEhAKCFRvdGFsVGF4GAMgASgDIqoC",
+            "CglQb3NDb3Vwb24SEgoKQnVzaW5lc3NJZBgBIAEoBBIQCghDb3Vwb25JZBgC",
+            "IAEoBBIQCghMb2NhdGlvbhgDIAEoCRISCgpPcGVyYXRvcklkGAQgASgJEg0K",
+            "BVBvc0lkGAUgASgEEh0KBFR5cGUYBiABKA4yDy5hdGsuQ291cG9uVHlwZRIM",
+            "CgRUaW1lGAcgASgDEh4KBUl0ZW1zGAggAygLMg8uYXRrLkNvdXBvbkl0ZW0S",
+            "HgoIUGF5bWVudHMYCSADKAsyDC5hdGsuUGF5bWVudBINCgVUb3RhbBgKIAEo",
+            "AxIgCglUYXhHcm91cHMYCyADKAsyDS5hdGsuVGF4R3JvdXASEAoIVG90YWxU",
+            "YXgYDCABKAMSEgoKVG90YWxOb1RheBgNIAEoAyK0AQoNQ2l0aXplbkNvdXBv",
+            "bhISCgpCdXNpbmVzc0lkGAEgASgEEhAKCENvdXBvbklkGAIgASgEEg0KBVBv",
+            "c0lkGAMgASgEEh0KBFR5cGUYBCABKA4yDy5hdGsuQ291cG9uVHlwZRIMCgRU",
+            "aW1lGAUgASgDEg0KBVRvdGFsGAYgASgDEiAKCVRheEdyb3VwcxgHIAMoCzIN",
+            "LmF0ay5UYXhHcm91cBIQCghUb3RhbFRheBgIIAEoAyKvAQoIUXJDb3Vwb24S",
+            "EgoKQnVzaW5lc3NJZBgBIAEoBBIQCghDb3Vwb25JZBgCIAEoBBINCgVQb3NJ",
+            "ZBgDIAEoBBIdCgRUeXBlGAQgASgOMg8uYXRrLkNvdXBvblR5cGUSDAoEVGlt",
+            "ZRgFIAEoAxINCgVUb3RhbBgGIAEoAxIgCglUYXhHcm91cHMYByADKAsyDS5h",
+            "dGsuVGF4R3JvdXASEAoIVG90YWxUYXgYCCABKAMqLgoKQ291cG9uVHlwZRII",
+            "CgRTYWxlEAASCgoGQ2FuY2VsEAESCgoGUmV0dXJuEAIqbAoLUGF5bWVudFR5",
+            "cGUSCwoHVW5rbm93bhAAEggKBENhc2gQARIOCgpDcmVkaXRDYXJkEAISCwoH",
+            "Vm91Y2hlchADEgoKBkNoZXF1ZRAEEhIKDkNyeXB0b0N1cnJlbmN5EAUSCQoF",
+            "T3RoZXIQBkIJWgcuL3Byb3RvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Atk.CouponType), typeof(global::Atk.PaymentType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CouponItem), global::Atk.CouponItem.Parser, new[]{ "Name", "Price", "Quantity", "Total", "TaxRate", "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CouponItem), global::Atk.CouponItem.Parser, new[]{ "Name", "Price", "Quantity", "Unit", "Total", "TaxRate", "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.Payment), global::Atk.Payment.Parser, new[]{ "Type", "Amount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.TaxGroup), global::Atk.TaxGroup.Parser, new[]{ "TaxRate", "TotalForTax", "TotalTax" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.PosCoupon), global::Atk.PosCoupon.Parser, new[]{ "BusinessId", "VatId", "CouponId", "Location", "OperatorId", "PosId", "Type", "Time", "Items", "Payments", "Total", "TaxGroups", "TotalTax", "TotalNoTax" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CitizenCoupon), global::Atk.CitizenCoupon.Parser, new[]{ "BusinessId", "VatId", "CouponId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.QrCoupon), global::Atk.QrCoupon.Parser, new[]{ "BusinessId", "VatId", "CouponId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.PosCoupon), global::Atk.PosCoupon.Parser, new[]{ "BusinessId", "CouponId", "Location", "OperatorId", "PosId", "Type", "Time", "Items", "Payments", "Total", "TaxGroups", "TotalTax", "TotalNoTax" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CitizenCoupon), global::Atk.CitizenCoupon.Parser, new[]{ "BusinessId", "CouponId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.QrCoupon), global::Atk.QrCoupon.Parser, new[]{ "BusinessId", "CouponId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null)
           }));
     }
     #endregion
@@ -122,6 +121,7 @@ namespace Atk {
       name_ = other.name_;
       price_ = other.price_;
       quantity_ = other.quantity_;
+      unit_ = other.unit_;
       total_ = other.total_;
       taxRate_ = other.taxRate_;
       type_ = other.type_;
@@ -170,8 +170,20 @@ namespace Atk {
       }
     }
 
+    /// <summary>Field number for the "Unit" field.</summary>
+    public const int UnitFieldNumber = 4;
+    private string unit_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Unit {
+      get { return unit_; }
+      set {
+        unit_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "Total" field.</summary>
-    public const int TotalFieldNumber = 4;
+    public const int TotalFieldNumber = 5;
     private long total_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -183,7 +195,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "TaxRate" field.</summary>
-    public const int TaxRateFieldNumber = 5;
+    public const int TaxRateFieldNumber = 6;
     private string taxRate_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -195,7 +207,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Type" field.</summary>
-    public const int TypeFieldNumber = 6;
+    public const int TypeFieldNumber = 7;
     private string type_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -224,6 +236,7 @@ namespace Atk {
       if (Name != other.Name) return false;
       if (Price != other.Price) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Quantity, other.Quantity)) return false;
+      if (Unit != other.Unit) return false;
       if (Total != other.Total) return false;
       if (TaxRate != other.TaxRate) return false;
       if (Type != other.Type) return false;
@@ -237,6 +250,7 @@ namespace Atk {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Price != 0L) hash ^= Price.GetHashCode();
       if (Quantity != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Quantity);
+      if (Unit.Length != 0) hash ^= Unit.GetHashCode();
       if (Total != 0L) hash ^= Total.GetHashCode();
       if (TaxRate.Length != 0) hash ^= TaxRate.GetHashCode();
       if (Type.Length != 0) hash ^= Type.GetHashCode();
@@ -270,16 +284,20 @@ namespace Atk {
         output.WriteRawTag(29);
         output.WriteFloat(Quantity);
       }
+      if (Unit.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Unit);
+      }
       if (Total != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt64(Total);
       }
       if (TaxRate.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteString(TaxRate);
       }
       if (Type.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteString(Type);
       }
       if (_unknownFields != null) {
@@ -304,16 +322,20 @@ namespace Atk {
         output.WriteRawTag(29);
         output.WriteFloat(Quantity);
       }
+      if (Unit.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Unit);
+      }
       if (Total != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt64(Total);
       }
       if (TaxRate.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteString(TaxRate);
       }
       if (Type.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteString(Type);
       }
       if (_unknownFields != null) {
@@ -334,6 +356,9 @@ namespace Atk {
       }
       if (Quantity != 0F) {
         size += 1 + 4;
+      }
+      if (Unit.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unit);
       }
       if (Total != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Total);
@@ -364,6 +389,9 @@ namespace Atk {
       }
       if (other.Quantity != 0F) {
         Quantity = other.Quantity;
+      }
+      if (other.Unit.Length != 0) {
+        Unit = other.Unit;
       }
       if (other.Total != 0L) {
         Total = other.Total;
@@ -405,15 +433,19 @@ namespace Atk {
             Quantity = input.ReadFloat();
             break;
           }
-          case 32: {
+          case 34: {
+            Unit = input.ReadString();
+            break;
+          }
+          case 40: {
             Total = input.ReadInt64();
             break;
           }
-          case 42: {
+          case 50: {
             TaxRate = input.ReadString();
             break;
           }
-          case 50: {
+          case 58: {
             Type = input.ReadString();
             break;
           }
@@ -448,15 +480,19 @@ namespace Atk {
             Quantity = input.ReadFloat();
             break;
           }
-          case 32: {
+          case 34: {
+            Unit = input.ReadString();
+            break;
+          }
+          case 40: {
             Total = input.ReadInt64();
             break;
           }
-          case 42: {
+          case 50: {
             TaxRate = input.ReadString();
             break;
           }
-          case 50: {
+          case 58: {
             Type = input.ReadString();
             break;
           }
@@ -1010,7 +1046,6 @@ namespace Atk {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PosCoupon(PosCoupon other) : this() {
       businessId_ = other.businessId_;
-      vatId_ = other.vatId_;
       couponId_ = other.couponId_;
       location_ = other.location_;
       operatorId_ = other.operatorId_;
@@ -1044,20 +1079,8 @@ namespace Atk {
       }
     }
 
-    /// <summary>Field number for the "VatId" field.</summary>
-    public const int VatIdFieldNumber = 2;
-    private ulong vatId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong VatId {
-      get { return vatId_; }
-      set {
-        vatId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "CouponId" field.</summary>
-    public const int CouponIdFieldNumber = 3;
+    public const int CouponIdFieldNumber = 2;
     private ulong couponId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1069,7 +1092,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Location" field.</summary>
-    public const int LocationFieldNumber = 4;
+    public const int LocationFieldNumber = 3;
     private string location_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1081,7 +1104,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "OperatorId" field.</summary>
-    public const int OperatorIdFieldNumber = 5;
+    public const int OperatorIdFieldNumber = 4;
     private string operatorId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1093,7 +1116,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "PosId" field.</summary>
-    public const int PosIdFieldNumber = 6;
+    public const int PosIdFieldNumber = 5;
     private ulong posId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1105,7 +1128,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Type" field.</summary>
-    public const int TypeFieldNumber = 7;
+    public const int TypeFieldNumber = 6;
     private global::Atk.CouponType type_ = global::Atk.CouponType.Sale;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1117,7 +1140,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Time" field.</summary>
-    public const int TimeFieldNumber = 8;
+    public const int TimeFieldNumber = 7;
     private long time_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1129,9 +1152,9 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Items" field.</summary>
-    public const int ItemsFieldNumber = 9;
+    public const int ItemsFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Atk.CouponItem> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(74, global::Atk.CouponItem.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Atk.CouponItem.Parser);
     private readonly pbc::RepeatedField<global::Atk.CouponItem> items_ = new pbc::RepeatedField<global::Atk.CouponItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1140,9 +1163,9 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Payments" field.</summary>
-    public const int PaymentsFieldNumber = 10;
+    public const int PaymentsFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Atk.Payment> _repeated_payments_codec
-        = pb::FieldCodec.ForMessage(82, global::Atk.Payment.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Atk.Payment.Parser);
     private readonly pbc::RepeatedField<global::Atk.Payment> payments_ = new pbc::RepeatedField<global::Atk.Payment>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1151,7 +1174,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Total" field.</summary>
-    public const int TotalFieldNumber = 11;
+    public const int TotalFieldNumber = 10;
     private long total_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1163,9 +1186,9 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "TaxGroups" field.</summary>
-    public const int TaxGroupsFieldNumber = 12;
+    public const int TaxGroupsFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Atk.TaxGroup> _repeated_taxGroups_codec
-        = pb::FieldCodec.ForMessage(98, global::Atk.TaxGroup.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Atk.TaxGroup.Parser);
     private readonly pbc::RepeatedField<global::Atk.TaxGroup> taxGroups_ = new pbc::RepeatedField<global::Atk.TaxGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1174,7 +1197,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "TotalTax" field.</summary>
-    public const int TotalTaxFieldNumber = 13;
+    public const int TotalTaxFieldNumber = 12;
     private long totalTax_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1186,7 +1209,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "TotalNoTax" field.</summary>
-    public const int TotalNoTaxFieldNumber = 14;
+    public const int TotalNoTaxFieldNumber = 13;
     private long totalNoTax_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1213,7 +1236,6 @@ namespace Atk {
         return true;
       }
       if (BusinessId != other.BusinessId) return false;
-      if (VatId != other.VatId) return false;
       if (CouponId != other.CouponId) return false;
       if (Location != other.Location) return false;
       if (OperatorId != other.OperatorId) return false;
@@ -1234,7 +1256,6 @@ namespace Atk {
     public override int GetHashCode() {
       int hash = 1;
       if (BusinessId != 0UL) hash ^= BusinessId.GetHashCode();
-      if (VatId != 0UL) hash ^= VatId.GetHashCode();
       if (CouponId != 0UL) hash ^= CouponId.GetHashCode();
       if (Location.Length != 0) hash ^= Location.GetHashCode();
       if (OperatorId.Length != 0) hash ^= OperatorId.GetHashCode();
@@ -1269,47 +1290,43 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (VatId != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(VatId);
-      }
       if (CouponId != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt64(CouponId);
       }
       if (Location.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Location);
       }
       if (OperatorId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(OperatorId);
       }
       if (PosId != 0UL) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteUInt64(PosId);
       }
       if (Type != global::Atk.CouponType.Sale) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Type);
       }
       if (Time != 0L) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteInt64(Time);
       }
       items_.WriteTo(output, _repeated_items_codec);
       payments_.WriteTo(output, _repeated_payments_codec);
       if (Total != 0L) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteInt64(Total);
       }
       taxGroups_.WriteTo(output, _repeated_taxGroups_codec);
       if (TotalTax != 0L) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteInt64(TotalTax);
       }
       if (TotalNoTax != 0L) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteInt64(TotalNoTax);
       }
       if (_unknownFields != null) {
@@ -1326,47 +1343,43 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (VatId != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(VatId);
-      }
       if (CouponId != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt64(CouponId);
       }
       if (Location.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Location);
       }
       if (OperatorId.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(OperatorId);
       }
       if (PosId != 0UL) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteUInt64(PosId);
       }
       if (Type != global::Atk.CouponType.Sale) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteEnum((int) Type);
       }
       if (Time != 0L) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteInt64(Time);
       }
       items_.WriteTo(ref output, _repeated_items_codec);
       payments_.WriteTo(ref output, _repeated_payments_codec);
       if (Total != 0L) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteInt64(Total);
       }
       taxGroups_.WriteTo(ref output, _repeated_taxGroups_codec);
       if (TotalTax != 0L) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteInt64(TotalTax);
       }
       if (TotalNoTax != 0L) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteInt64(TotalNoTax);
       }
       if (_unknownFields != null) {
@@ -1381,9 +1394,6 @@ namespace Atk {
       int size = 0;
       if (BusinessId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BusinessId);
-      }
-      if (VatId != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VatId);
       }
       if (CouponId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CouponId);
@@ -1429,9 +1439,6 @@ namespace Atk {
       }
       if (other.BusinessId != 0UL) {
         BusinessId = other.BusinessId;
-      }
-      if (other.VatId != 0UL) {
-        VatId = other.VatId;
       }
       if (other.CouponId != 0UL) {
         CouponId = other.CouponId;
@@ -1487,54 +1494,50 @@ namespace Atk {
             break;
           }
           case 16: {
-            VatId = input.ReadUInt64();
-            break;
-          }
-          case 24: {
             CouponId = input.ReadUInt64();
             break;
           }
-          case 34: {
+          case 26: {
             Location = input.ReadString();
             break;
           }
-          case 42: {
+          case 34: {
             OperatorId = input.ReadString();
             break;
           }
-          case 48: {
+          case 40: {
             PosId = input.ReadUInt64();
             break;
           }
-          case 56: {
+          case 48: {
             Type = (global::Atk.CouponType) input.ReadEnum();
             break;
           }
-          case 64: {
+          case 56: {
             Time = input.ReadInt64();
             break;
           }
-          case 74: {
+          case 66: {
             items_.AddEntriesFrom(input, _repeated_items_codec);
             break;
           }
-          case 82: {
+          case 74: {
             payments_.AddEntriesFrom(input, _repeated_payments_codec);
             break;
           }
-          case 88: {
+          case 80: {
             Total = input.ReadInt64();
             break;
           }
-          case 98: {
+          case 90: {
             taxGroups_.AddEntriesFrom(input, _repeated_taxGroups_codec);
             break;
           }
-          case 104: {
+          case 96: {
             TotalTax = input.ReadInt64();
             break;
           }
-          case 112: {
+          case 104: {
             TotalNoTax = input.ReadInt64();
             break;
           }
@@ -1562,54 +1565,50 @@ namespace Atk {
             break;
           }
           case 16: {
-            VatId = input.ReadUInt64();
-            break;
-          }
-          case 24: {
             CouponId = input.ReadUInt64();
             break;
           }
-          case 34: {
+          case 26: {
             Location = input.ReadString();
             break;
           }
-          case 42: {
+          case 34: {
             OperatorId = input.ReadString();
             break;
           }
-          case 48: {
+          case 40: {
             PosId = input.ReadUInt64();
             break;
           }
-          case 56: {
+          case 48: {
             Type = (global::Atk.CouponType) input.ReadEnum();
             break;
           }
-          case 64: {
+          case 56: {
             Time = input.ReadInt64();
             break;
           }
-          case 74: {
+          case 66: {
             items_.AddEntriesFrom(ref input, _repeated_items_codec);
             break;
           }
-          case 82: {
+          case 74: {
             payments_.AddEntriesFrom(ref input, _repeated_payments_codec);
             break;
           }
-          case 88: {
+          case 80: {
             Total = input.ReadInt64();
             break;
           }
-          case 98: {
+          case 90: {
             taxGroups_.AddEntriesFrom(ref input, _repeated_taxGroups_codec);
             break;
           }
-          case 104: {
+          case 96: {
             TotalTax = input.ReadInt64();
             break;
           }
-          case 112: {
+          case 104: {
             TotalNoTax = input.ReadInt64();
             break;
           }
@@ -1656,7 +1655,6 @@ namespace Atk {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CitizenCoupon(CitizenCoupon other) : this() {
       businessId_ = other.businessId_;
-      vatId_ = other.vatId_;
       couponId_ = other.couponId_;
       posId_ = other.posId_;
       type_ = other.type_;
@@ -1685,20 +1683,8 @@ namespace Atk {
       }
     }
 
-    /// <summary>Field number for the "VatId" field.</summary>
-    public const int VatIdFieldNumber = 2;
-    private ulong vatId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong VatId {
-      get { return vatId_; }
-      set {
-        vatId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "CouponId" field.</summary>
-    public const int CouponIdFieldNumber = 3;
+    public const int CouponIdFieldNumber = 2;
     private ulong couponId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1710,7 +1696,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "PosId" field.</summary>
-    public const int PosIdFieldNumber = 4;
+    public const int PosIdFieldNumber = 3;
     private ulong posId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1722,7 +1708,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Type" field.</summary>
-    public const int TypeFieldNumber = 5;
+    public const int TypeFieldNumber = 4;
     private global::Atk.CouponType type_ = global::Atk.CouponType.Sale;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1734,7 +1720,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Time" field.</summary>
-    public const int TimeFieldNumber = 6;
+    public const int TimeFieldNumber = 5;
     private long time_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1746,7 +1732,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Total" field.</summary>
-    public const int TotalFieldNumber = 7;
+    public const int TotalFieldNumber = 6;
     private long total_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1758,9 +1744,9 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "TaxGroups" field.</summary>
-    public const int TaxGroupsFieldNumber = 8;
+    public const int TaxGroupsFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Atk.TaxGroup> _repeated_taxGroups_codec
-        = pb::FieldCodec.ForMessage(66, global::Atk.TaxGroup.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Atk.TaxGroup.Parser);
     private readonly pbc::RepeatedField<global::Atk.TaxGroup> taxGroups_ = new pbc::RepeatedField<global::Atk.TaxGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1769,7 +1755,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "TotalTax" field.</summary>
-    public const int TotalTaxFieldNumber = 9;
+    public const int TotalTaxFieldNumber = 8;
     private long totalTax_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1796,7 +1782,6 @@ namespace Atk {
         return true;
       }
       if (BusinessId != other.BusinessId) return false;
-      if (VatId != other.VatId) return false;
       if (CouponId != other.CouponId) return false;
       if (PosId != other.PosId) return false;
       if (Type != other.Type) return false;
@@ -1812,7 +1797,6 @@ namespace Atk {
     public override int GetHashCode() {
       int hash = 1;
       if (BusinessId != 0UL) hash ^= BusinessId.GetHashCode();
-      if (VatId != 0UL) hash ^= VatId.GetHashCode();
       if (CouponId != 0UL) hash ^= CouponId.GetHashCode();
       if (PosId != 0UL) hash ^= PosId.GetHashCode();
       if (Type != global::Atk.CouponType.Sale) hash ^= Type.GetHashCode();
@@ -1842,33 +1826,29 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (VatId != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(VatId);
-      }
       if (CouponId != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt64(CouponId);
       }
       if (PosId != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt64(PosId);
       }
       if (Type != global::Atk.CouponType.Sale) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
       if (Time != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteInt64(Time);
       }
       if (Total != 0L) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteInt64(Total);
       }
       taxGroups_.WriteTo(output, _repeated_taxGroups_codec);
       if (TotalTax != 0L) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteInt64(TotalTax);
       }
       if (_unknownFields != null) {
@@ -1885,33 +1865,29 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (VatId != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(VatId);
-      }
       if (CouponId != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt64(CouponId);
       }
       if (PosId != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt64(PosId);
       }
       if (Type != global::Atk.CouponType.Sale) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
       if (Time != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteInt64(Time);
       }
       if (Total != 0L) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteInt64(Total);
       }
       taxGroups_.WriteTo(ref output, _repeated_taxGroups_codec);
       if (TotalTax != 0L) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteInt64(TotalTax);
       }
       if (_unknownFields != null) {
@@ -1926,9 +1902,6 @@ namespace Atk {
       int size = 0;
       if (BusinessId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BusinessId);
-      }
-      if (VatId != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VatId);
       }
       if (CouponId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CouponId);
@@ -1963,9 +1936,6 @@ namespace Atk {
       }
       if (other.BusinessId != 0UL) {
         BusinessId = other.BusinessId;
-      }
-      if (other.VatId != 0UL) {
-        VatId = other.VatId;
       }
       if (other.CouponId != 0UL) {
         CouponId = other.CouponId;
@@ -2010,34 +1980,30 @@ namespace Atk {
             break;
           }
           case 16: {
-            VatId = input.ReadUInt64();
-            break;
-          }
-          case 24: {
             CouponId = input.ReadUInt64();
             break;
           }
-          case 32: {
+          case 24: {
             PosId = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 32: {
             Type = (global::Atk.CouponType) input.ReadEnum();
             break;
           }
-          case 48: {
+          case 40: {
             Time = input.ReadInt64();
             break;
           }
-          case 56: {
+          case 48: {
             Total = input.ReadInt64();
             break;
           }
-          case 66: {
+          case 58: {
             taxGroups_.AddEntriesFrom(input, _repeated_taxGroups_codec);
             break;
           }
-          case 72: {
+          case 64: {
             TotalTax = input.ReadInt64();
             break;
           }
@@ -2065,34 +2031,30 @@ namespace Atk {
             break;
           }
           case 16: {
-            VatId = input.ReadUInt64();
-            break;
-          }
-          case 24: {
             CouponId = input.ReadUInt64();
             break;
           }
-          case 32: {
+          case 24: {
             PosId = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 32: {
             Type = (global::Atk.CouponType) input.ReadEnum();
             break;
           }
-          case 48: {
+          case 40: {
             Time = input.ReadInt64();
             break;
           }
-          case 56: {
+          case 48: {
             Total = input.ReadInt64();
             break;
           }
-          case 66: {
+          case 58: {
             taxGroups_.AddEntriesFrom(ref input, _repeated_taxGroups_codec);
             break;
           }
-          case 72: {
+          case 64: {
             TotalTax = input.ReadInt64();
             break;
           }
@@ -2139,7 +2101,6 @@ namespace Atk {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QrCoupon(QrCoupon other) : this() {
       businessId_ = other.businessId_;
-      vatId_ = other.vatId_;
       couponId_ = other.couponId_;
       posId_ = other.posId_;
       type_ = other.type_;
@@ -2168,20 +2129,8 @@ namespace Atk {
       }
     }
 
-    /// <summary>Field number for the "VatId" field.</summary>
-    public const int VatIdFieldNumber = 2;
-    private ulong vatId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong VatId {
-      get { return vatId_; }
-      set {
-        vatId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "CouponId" field.</summary>
-    public const int CouponIdFieldNumber = 3;
+    public const int CouponIdFieldNumber = 2;
     private ulong couponId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2193,7 +2142,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "PosId" field.</summary>
-    public const int PosIdFieldNumber = 4;
+    public const int PosIdFieldNumber = 3;
     private ulong posId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2205,7 +2154,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Type" field.</summary>
-    public const int TypeFieldNumber = 5;
+    public const int TypeFieldNumber = 4;
     private global::Atk.CouponType type_ = global::Atk.CouponType.Sale;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2217,7 +2166,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Time" field.</summary>
-    public const int TimeFieldNumber = 6;
+    public const int TimeFieldNumber = 5;
     private long time_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2229,7 +2178,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "Total" field.</summary>
-    public const int TotalFieldNumber = 7;
+    public const int TotalFieldNumber = 6;
     private long total_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2241,9 +2190,9 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "TaxGroups" field.</summary>
-    public const int TaxGroupsFieldNumber = 8;
+    public const int TaxGroupsFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Atk.TaxGroup> _repeated_taxGroups_codec
-        = pb::FieldCodec.ForMessage(66, global::Atk.TaxGroup.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Atk.TaxGroup.Parser);
     private readonly pbc::RepeatedField<global::Atk.TaxGroup> taxGroups_ = new pbc::RepeatedField<global::Atk.TaxGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2252,7 +2201,7 @@ namespace Atk {
     }
 
     /// <summary>Field number for the "TotalTax" field.</summary>
-    public const int TotalTaxFieldNumber = 9;
+    public const int TotalTaxFieldNumber = 8;
     private long totalTax_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2279,7 +2228,6 @@ namespace Atk {
         return true;
       }
       if (BusinessId != other.BusinessId) return false;
-      if (VatId != other.VatId) return false;
       if (CouponId != other.CouponId) return false;
       if (PosId != other.PosId) return false;
       if (Type != other.Type) return false;
@@ -2295,7 +2243,6 @@ namespace Atk {
     public override int GetHashCode() {
       int hash = 1;
       if (BusinessId != 0UL) hash ^= BusinessId.GetHashCode();
-      if (VatId != 0UL) hash ^= VatId.GetHashCode();
       if (CouponId != 0UL) hash ^= CouponId.GetHashCode();
       if (PosId != 0UL) hash ^= PosId.GetHashCode();
       if (Type != global::Atk.CouponType.Sale) hash ^= Type.GetHashCode();
@@ -2325,33 +2272,29 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (VatId != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(VatId);
-      }
       if (CouponId != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt64(CouponId);
       }
       if (PosId != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt64(PosId);
       }
       if (Type != global::Atk.CouponType.Sale) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
       if (Time != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteInt64(Time);
       }
       if (Total != 0L) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteInt64(Total);
       }
       taxGroups_.WriteTo(output, _repeated_taxGroups_codec);
       if (TotalTax != 0L) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteInt64(TotalTax);
       }
       if (_unknownFields != null) {
@@ -2368,33 +2311,29 @@ namespace Atk {
         output.WriteRawTag(8);
         output.WriteUInt64(BusinessId);
       }
-      if (VatId != 0UL) {
-        output.WriteRawTag(16);
-        output.WriteUInt64(VatId);
-      }
       if (CouponId != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt64(CouponId);
       }
       if (PosId != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt64(PosId);
       }
       if (Type != global::Atk.CouponType.Sale) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
       if (Time != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteInt64(Time);
       }
       if (Total != 0L) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(48);
         output.WriteInt64(Total);
       }
       taxGroups_.WriteTo(ref output, _repeated_taxGroups_codec);
       if (TotalTax != 0L) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteInt64(TotalTax);
       }
       if (_unknownFields != null) {
@@ -2409,9 +2348,6 @@ namespace Atk {
       int size = 0;
       if (BusinessId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BusinessId);
-      }
-      if (VatId != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VatId);
       }
       if (CouponId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CouponId);
@@ -2446,9 +2382,6 @@ namespace Atk {
       }
       if (other.BusinessId != 0UL) {
         BusinessId = other.BusinessId;
-      }
-      if (other.VatId != 0UL) {
-        VatId = other.VatId;
       }
       if (other.CouponId != 0UL) {
         CouponId = other.CouponId;
@@ -2493,34 +2426,30 @@ namespace Atk {
             break;
           }
           case 16: {
-            VatId = input.ReadUInt64();
-            break;
-          }
-          case 24: {
             CouponId = input.ReadUInt64();
             break;
           }
-          case 32: {
+          case 24: {
             PosId = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 32: {
             Type = (global::Atk.CouponType) input.ReadEnum();
             break;
           }
-          case 48: {
+          case 40: {
             Time = input.ReadInt64();
             break;
           }
-          case 56: {
+          case 48: {
             Total = input.ReadInt64();
             break;
           }
-          case 66: {
+          case 58: {
             taxGroups_.AddEntriesFrom(input, _repeated_taxGroups_codec);
             break;
           }
-          case 72: {
+          case 64: {
             TotalTax = input.ReadInt64();
             break;
           }
@@ -2548,34 +2477,30 @@ namespace Atk {
             break;
           }
           case 16: {
-            VatId = input.ReadUInt64();
-            break;
-          }
-          case 24: {
             CouponId = input.ReadUInt64();
             break;
           }
-          case 32: {
+          case 24: {
             PosId = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 32: {
             Type = (global::Atk.CouponType) input.ReadEnum();
             break;
           }
-          case 48: {
+          case 40: {
             Time = input.ReadInt64();
             break;
           }
-          case 56: {
+          case 48: {
             Total = input.ReadInt64();
             break;
           }
-          case 66: {
+          case 58: {
             taxGroups_.AddEntriesFrom(ref input, _repeated_taxGroups_codec);
             break;
           }
-          case 72: {
+          case 64: {
             TotalTax = input.ReadInt64();
             break;
           }

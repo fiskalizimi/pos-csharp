@@ -24,9 +24,10 @@ message CouponItem {
   string Name = 1;
   int64 Price = 2;
   float Quantity = 3;
-  int64 Total = 4;
-  string TaxRate = 5;
-  string Type = 6;
+  string Unit = 4;
+  int64 Total = 5;
+  string TaxRate = 6;
+  string Type = 7;
 }
 
 message Payment {
@@ -42,41 +43,38 @@ message TaxGroup {
 
 message PosCoupon {
   uint64 BusinessId = 1;
-  uint64 VatId = 2;
-  uint64 CouponId = 3;
-  string Location = 4;
-  string OperatorId = 5;
-  uint64 PosId = 6;
-  CouponType Type = 7;
-  int64 Time = 8;
-  repeated CouponItem Items = 9;
-  repeated Payment Payments = 10;
-  int64 Total = 11;
-  repeated TaxGroup TaxGroups = 12;
-  int64 TotalTax = 13;
-  int64 TotalNoTax = 14;
+  uint64 CouponId = 2;
+  string Location = 3;
+  string OperatorId = 4;
+  uint64 PosId = 5;
+  CouponType Type = 6;
+  int64 Time = 7;
+  repeated CouponItem Items = 8;
+  repeated Payment Payments = 9;
+  int64 Total = 10;
+  repeated TaxGroup TaxGroups = 11;
+  int64 TotalTax = 12;
+  int64 TotalNoTax = 13;
 }
 
 message CitizenCoupon {
   uint64 BusinessId = 1;
-  uint64 VatId = 2;
-  uint64 CouponId = 3;
-  uint64 PosId = 4;
-  CouponType Type = 5;
-  int64 Time = 6;
-  int64 Total = 7;
-  repeated TaxGroup TaxGroups = 8;
-  int64 TotalTax = 9;
+  uint64 CouponId = 2;
+  uint64 PosId = 3;
+  CouponType Type = 4;
+  int64 Time = 5;
+  int64 Total = 6;
+  repeated TaxGroup TaxGroups = 7;
+  int64 TotalTax = 8;
 }
 
 message QrCoupon {
   uint64 BusinessId = 1;
-  uint64 VatId = 2;
-  uint64 CouponId = 3;
-  uint64 PosId = 4;
-  CouponType Type = 5;
-  int64 Time = 6;
-  int64 Total = 7;
-  repeated TaxGroup TaxGroups = 8;
-  int64 TotalTax = 9;
+  uint64 CouponId = 2;
+  uint64 PosId = 3;
+  CouponType Type = 4;
+  int64 Time = 5;
+  int64 Total = 6;
+  repeated TaxGroup TaxGroups = 7;
+  int64 TotalTax = 8;
 }

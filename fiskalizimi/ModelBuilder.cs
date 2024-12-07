@@ -11,7 +11,6 @@ public class ModelBuilder
         var citizenCoupon = new CitizenCoupon
         {
             BusinessId = 1,
-            VatId = 1,
             CouponId = 2,
             PosId = 1,
             Type = CouponType.Sale,
@@ -35,7 +34,6 @@ public class ModelBuilder
         var posCoupon = new PosCoupon
         {
             BusinessId = 1,
-            VatId = 1,
             CouponId = 2,
             Location = "Prishtine",
             OperatorId = "Kushtrimi",
