@@ -34,18 +34,20 @@ public class ModelBuilder
         var posCoupon = new PosCoupon
         {
             BusinessId = 1,
-            CouponId = 2,
+            PosId = 1,
+            CouponId = 1234,
+            BranchId = 3,
             Location = "Prishtine",
             OperatorId = "Kushtrimi",
-            PosId = 1,
+            VerificationNo = "1234567890123456",
             Type = CouponType.Sale,
             Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
             Items =
             {
-                new CouponItem { Name = "uje rugove", Price = 150, Quantity = 3, Total = 450, TaxRate = "C", Type = "TT" },
-                new CouponItem { Name = "sendviq", Price = 300, Quantity = 2, Total = 600, TaxRate = "E", Type = "TT" },
-                new CouponItem { Name = "buke", Price = 80, Quantity = 4, Total = 320, TaxRate = "D", Type = "TT" },
-                new CouponItem { Name = "machiato e madhe", Price = 150, Quantity = 3, Total = 450, TaxRate = "E", Type = "TT" }
+                new CouponItem { Name = "uje rugove", Price = 150, Unit = "cope", Quantity = 3, Total = 450, TaxRate = "C", Type = "TT" },
+                new CouponItem { Name = "sendviq", Price = 300, Unit = "cope", Quantity = 2, Total = 600, TaxRate = "E", Type = "TT" },
+                new CouponItem { Name = "buke", Price = 80, Unit = "cope", Quantity = 4, Total = 320, TaxRate = "D", Type = "TT" },
+                new CouponItem { Name = "machiato e madhe", Unit = "cope", Price = 150, Quantity = 3, Total = 450, TaxRate = "E", Type = "TT" }
             },
             Payments =
             {
