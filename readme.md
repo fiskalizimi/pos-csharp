@@ -9,8 +9,8 @@ This repository provides a C# implementation for integrating with a fiscalizatio
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [Generating PROTOBUF models](#generating-protobuf-models)
-  - [Manually generating Models](#manually-generating-models)
-  - [Let .NET generate models automatically](#let-net-generate-models-automatically)
+    - [Manually generating Models](#manually-generating-models)
+    - [Let .NET generate models automatically](#let-net-generate-models-automatically)
 - [Model Explanation](#model-explanation)
     - [Citizen Coupon](#citizen-coupon)
     - [POS Coupon](#pos-coupon)
@@ -18,7 +18,7 @@ This repository provides a C# implementation for integrating with a fiscalizatio
 - [Digital Signing](#digital-signing)
     - [Steps to generate digital signature](#steps-to-generate-digital-signature)
     - [Using provided DLL to digitally sign strings](#using-provided-dll-to-digitally-sign-strings)
-    - [QR Code generation](#qr-code) 
+    - [QR Code generation](#qr-code)
 - [Sending Data to Fiscalization Service](#sending-data-to-fiscalization-service)
     - [Sending Citizen Coupons](#sending-citizen-coupons)
     - [Sending POS Coupons](#sending-pos-coupons)
@@ -60,7 +60,7 @@ Before integrating the system, ensure you have the following installed:
 
 ### Manually generating Models ###
 
-To manually generate C# classes from a ```.proto``` file using ```protoc```, the Protobuf compiler, you will first need to have the Protobuf tools 
+To manually generate C# classes from a ```.proto``` file using ```protoc```, the Protobuf compiler, you will first need to have the Protobuf tools
 installed on your system. The ```protoc``` compiler is responsible for compiling ```.proto``` files into language-specific classes, including C#. Follow these steps to generate C# classes manually:
 
 1. **Install the Protobuf compiler:** If you don't have ```protoc``` installed, download and install it from the [official Protobuf releases](https://github.com/protocolbuffers/protobuf/releases). Ensure the executable is in your system's PATH.
@@ -69,26 +69,26 @@ installed on your system. The ```protoc``` compiler is responsible for compiling
    ```
    protoc --proto_path=./path/to/protos --csharp_out=./path/to/output ./path/to/protos/models.proto
    ```
-   *  ```--proto_path=./path/to/protos``` : Specifies the directory where your .proto files are located.
-   * ```--csharp_out=./path/to/output``` : Specifies the directory where the generated C# files should be saved.
-   * ```models.proto``` : The ```.proto``` file you are compiling.
+    *  ```--proto_path=./path/to/protos``` : Specifies the directory where your .proto files are located.
+    * ```--csharp_out=./path/to/output``` : Specifies the directory where the generated C# files should be saved.
+    * ```models.proto``` : The ```.proto``` file you are compiling.
 4. **Generated C# classes:** After running the ```protoc``` command, it will generate C# classes corresponding to the Protobuf messages and enums defined in the ```models.proto``` file. The classes will contain methods like ```ParseFrom()```, ```ToByteArray()```, and properties representing each field in the messages.
 5. **Include the generated classes in your project:** After generating the C# files, you can manually add them to your .NET project by copying them into your solution’s directory or directly referencing them in your project’s code.
 
 ### Let .NET generate models automatically
 
-To generate Protobuf models in .NET 8.0 from the ```models.proto``` file, you'll first need to install the **Google.Protobuf** package 
-and the **Grpc.Tools** package, which provides the necessary tooling to compile ```.proto``` files into C# classes. This process leverages the Protobuf compiler (protoc), 
+To generate Protobuf models in .NET 8.0 from the ```models.proto``` file, you'll first need to install the **Google.Protobuf** package
+and the **Grpc.Tools** package, which provides the necessary tooling to compile ```.proto``` files into C# classes. This process leverages the Protobuf compiler (protoc),
 which takes the ```.proto``` definition and generates C# model classes for use in your .NET project.
 
 Here are the steps to generate Protobuf models:
 
 1. **Install the required NuGet packages:**
 
-   * Install Google.Protobuf to use Protobuf runtime classes.
-   * Install Grpc.Tools to compile .proto files.
+    * Install Google.Protobuf to use Protobuf runtime classes.
+    * Install Grpc.Tools to compile .proto files.
 
-    Run the following command in your project:
+   Run the following command in your project:
 
     ```
     dotnet add package Google.Protobuf
@@ -207,7 +207,7 @@ The POS Coupon includes:
 * **BranchId** is the branch id.
 * **Location** is the location/city of the Sale Point
 * **OperatorId** is the ID/Name of the operator/server
-* **VerificationNo** is a unique value for each coupon. Verification Number is used to check if the Coupon has been verified by the citizen.
+* **VerificationNo** is a unique value for each coupon, and it is 16 characters long max. Verification Number is used to check if the Coupon has been verified by the citizen.
 * **Type** this is the type of the coupon. It is an enum value and can be ```SALE```, ```RETURN``` or ```CANCEL```
 * **Time** the time fiscal coupon is issued. The value is Unix timestamp
 * **Items** is an array of ```CouponItem``` objects. Each ```CouponItem``` represents an item sold to the customer.
@@ -318,13 +318,13 @@ The return value is a **base64-encoded** signature.
 
 ### Using provided DLL to digitally sign strings ###
 
-We have also provided a DLL that is used to digitally sign a string and return a Base64 string of the signature. You can utilize it in a C# application using the ```DllImport``` 
+We have also provided a DLL that is used to digitally sign a string and return a Base64 string of the signature. You can utilize it in a C# application using the ```DllImport```
 attribute to call the external method from the DLL. The DLL exposes a function called ```DigitallySign```, which takes a message and a private key as inputs and returns a digitally signed Base64 string.
 
-The class [```DllImporter```](fiskalizimi/DllImporter.cs) shows the interaction with provided external DLL to perform digital signing of a message which can be a base64 string encoding of protobuf representation of 
+The class [```DllImporter```](fiskalizimi/DllImporter.cs) shows the interaction with provided external DLL to perform digital signing of a message which can be a base64 string encoding of protobuf representation of
 either [PosCoupon](#pos-coupon) or [CitizenCoupon](#citizen-coupon) that is used in [QR Code](#qr-code).
 
-This is done by importing the ```DigitallySign``` function from a native DLL (named "```signer```") using the ```[DllImport]``` attribute, 
+This is done by importing the ```DigitallySign``` function from a native DLL (named "```signer```") using the ```[DllImport]``` attribute,
 which allows unmanaged functions to be called in C#. The external DLL performs the actual cryptographic operation, digitally signing the input message using a private key.
 
 1. **Initialization:** The class is initialized with a private key, provided through the constructor and stored in the ```_key``` field. This private key, in PEM format or another appropriate format, will be used by the external DLL to sign messages.
@@ -343,7 +343,7 @@ which allows unmanaged functions to be called in C#. The external DLL performs t
        return signature; // Return the signature
    }
    ```
-   
+
 
 ### QR Code ###
 
@@ -417,8 +417,8 @@ public static string SignCitizenCoupon(CitizenCoupon citizenCoupon, ISigner sign
 
 ### Sending Citizen Coupons ###
 
-QR Code will be scanned by the Citizen Mobile App, which in turn will send the data to the Fiscalization System for verification. 
-This method mimics the Citizen Mobile App, and is used for testing purposes. The [SendQrCode method](fiskalizimi/Program.cs) sends the serialized and signed citizen coupon to the fiscalization service.    
+QR Code will be scanned by the Citizen Mobile App, which in turn will send the data to the Fiscalization System for verification.
+This method mimics the Citizen Mobile App, and is used for testing purposes. The [SendQrCode method](fiskalizimi/Program.cs) sends the serialized and signed citizen coupon to the fiscalization service.
 
 This is how you prepare and submit the request:
 
