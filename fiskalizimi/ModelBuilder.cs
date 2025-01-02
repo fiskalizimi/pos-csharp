@@ -10,9 +10,9 @@ public class ModelBuilder
     {
         var citizenCoupon = new CitizenCoupon
         {
-            BusinessId = 1,
-            CouponId = 2,
+            BusinessId = 60100,
             PosId = 1,
+            CouponId = 10,
             Type = CouponType.Sale,
             Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
             Total = 1820,
@@ -33,13 +33,13 @@ public class ModelBuilder
     {
         var posCoupon = new PosCoupon
         {
-            BusinessId = 1,
-            PosId = 1,
-            CouponId = 1234,
-            BranchId = 3,
+            BusinessId = 60100,
+            CouponId = 10,
+            BranchId = 1,
             Location = "Prishtine",
             OperatorId = "Kushtrimi",
-            ApplicationId = 1,
+            PosId = 1,
+            ApplicationId = 1234,
             VerificationNo = "1234567890123456",
             Type = CouponType.Sale,
             Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
