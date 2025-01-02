@@ -39,6 +39,7 @@ public class ModelBuilder
             BranchId = 3,
             Location = "Prishtine",
             OperatorId = "Kushtrimi",
+            ApplicationId = 1,
             VerificationNo = "1234567890123456",
             Type = CouponType.Sale,
             Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),

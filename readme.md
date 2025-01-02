@@ -168,6 +168,7 @@ public PosCoupon GetPosCoupon()
         BranchId = 3,
         Location = "Prishtine",
         OperatorId = "Kushtrimi",
+        ApplicationId = 1,
         VerificationNo = "1234567890123456",
         Type = CouponType.Sale,
         Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
@@ -207,6 +208,7 @@ The POS Coupon includes:
 * **BranchId** is the branch id.
 * **Location** is the location/city of the Sale Point
 * **OperatorId** is the ID/Name of the operator/server
+* **ApplicationId** is the unique ID of the Application/POS System used. This code is provided by the Software provider that has implemented the POS Solution.
 * **VerificationNo** is a unique value for each coupon, and it is 16 characters long max. Verification Number is used to check if the Coupon has been verified by the citizen.
 * **Type** this is the type of the coupon. It is an enum value and can be ```SALE```, ```RETURN``` or ```CANCEL```
 * **Time** the time fiscal coupon is issued. The value is Unix timestamp
@@ -247,12 +249,12 @@ After the application is executed, enter the details and click on the **Onboard*
 
 if everything went Ok, then you will get a success message:
 
-![Onboarder2](onboard2.png)
+![Onboarder2](onboarder2.png)
 
 
 To view certificate and private key in PEM format, on the **Certificate** tab, first tick the **Show private key** checkbox, then click on the **Show Certificate** button:
 
-![Onboarder3](onboard3.png)
+![Onboarder3](onboarder3.png)
 
 To extract certificate and private key in PEM format, on the **Certificate** tab, first tick the **Show private key** checkbox, then click on the **Export Certificate** button.
 This action will create another two files in the folder ```private-key.pem``` and ```signed-certificate.pem```
