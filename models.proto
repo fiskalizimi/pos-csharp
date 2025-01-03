@@ -48,15 +48,16 @@ message PosCoupon {
   string Location = 4;
   string OperatorId = 5;
   uint64 PosId = 6;
-  string VerificationNo = 7;
-  CouponType Type = 8;
-  int64 Time = 9;
-  repeated CouponItem Items = 10;
-  repeated Payment Payments = 11;
-  int64 Total = 12;
-  repeated TaxGroup TaxGroups = 13;
-  int64 TotalTax = 14;
-  int64 TotalNoTax = 15;
+  uint64 ApplicationId = 7;
+  string VerificationNo = 8;
+  CouponType Type = 9;
+  int64 Time = 10;
+  repeated CouponItem Items = 11;
+  repeated Payment Payments = 12;
+  int64 Total = 13;
+  repeated TaxGroup TaxGroups = 14;
+  int64 TotalTax = 15;
+  int64 TotalNoTax = 16;
 }
 
 message CitizenCoupon {
