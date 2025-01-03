@@ -9,11 +9,11 @@ public static class Fiskalizimi
 {
     
     private const string PrivateKeyPem = @"
-            -----BEGIN EC PRIVATE KEY-----
-            MHcCAQEEINOaBfsjAy90F/GCYMhkT/PibHpI5aIVxYN0YJHC7WKfoAoGCCqGSM49
-            AwEHoUQDQgAEjmvAipa/zaDRphq0biefLzvse7SRN3fY4SY1edOqFlzAsYv7yZ6D
-            nDD65d4cs918/ZMzpfA7sm/gYOFU77qHXA==
-            -----END EC PRIVATE KEY-----";
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEIAj6fmj1djrjdWXIzyaSUi1Bp8/p/vT9rhPSNJhnfgSUoAoGCCqGSM49
+AwEHoUQDQgAEZ0mBPR5oPsP+GJl0gAOvtZsubvTs/9nTL1p5qOEWRrKZJZU8Rrv8
+UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
+-----END EC PRIVATE KEY-----";
     
 
     /// This method digitally signs the CitizenCoupon provided and returns the string that
@@ -66,7 +66,7 @@ public static class Fiskalizimi
 
     public static async Task SendQrCode()
     {
-        const string url = "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/citizen/coupon";
+        const string url = "https://fiskalizimi.atk-ks.org/citizen/coupon";
 
         try
         {
@@ -106,7 +106,7 @@ public static class Fiskalizimi
     
     public static async Task SendPosCoupon()
     {
-        const string url = "http://a94422f45ed154fe59456dd9678d460f-556849162.us-east-1.elb.amazonaws.com/pos/coupon";
+        const string url = "https://fiskalizimi.atk-ks.org/pos/coupon";
         
         try
         {
@@ -147,5 +147,6 @@ public static class Fiskalizimi
     public static async Task Main(string[] args)
     {
         await SendPosCoupon();
+        await SendQrCode();
     }
 }
