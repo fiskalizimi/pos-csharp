@@ -458,6 +458,10 @@ public static async Task SendPosCoupon()
 
 ## Running the Application ##
 
+Before you can run the sample application provided, you first need to be onboarded. 
+Once you have been [onboarded](#key-generation), then you need to copy the private key and replace 
+the existing private key in the [Program.cs](fiskalizimi/Program.cs) file
+
 To execute the program and send the coupons:
 ```
 dotnet run
