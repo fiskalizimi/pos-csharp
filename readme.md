@@ -229,7 +229,7 @@ There are different ways to generate a PKI key pair, depending on the operating 
 
 We have provided a tool that simplifies the process a lot by creating the key pair, generating a CSR and sending the CSR to ATK Certificate Authority to be digitally signed and verified.
 
-To download the tool on you machine, click on one of the links below (depending on the operating system you are using):
+If you have cloned this repository the tool for different operating systems is located under the folder ```onbarding``` or, alternatively to download the tool on you machine, click on one of the links below (depending on the operating system you are using):
 
 * [onboarder for windows](https://github.com/fiskalizimi/pos-golang/raw/refs/heads/main/onboarder/onboarder-windows.zip)
 * [onboarder for MacOS](https://github.com/fiskalizimi/pos-golang/raw/refs/heads/main/onboarder/onboarder-macos.zip)
