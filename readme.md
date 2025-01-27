@@ -468,3 +468,5 @@ dotnet run
 ```
 
 Make sure to configure the correct URL of the fiscalization service and have a valid ECDSA private key to sign the coupons.
+
+test
