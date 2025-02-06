@@ -243,7 +243,19 @@ To onboard your business, you need the following information:
 4. Branch ID
 
 Once you have downloaded the onboarder tool, and extracted/unzipped it to a folder, then you need to run the application.
-After the application is executed, enter the details and click on the **Onboard** button
+You need to provide an environment flag as an argument to the executable. For testing purposes the environment value should be ```TEST```, and for production the environment value should be ```PROD```
+
+For example
+
+On Windows Platform you need to open a command prompt then execute the application like the example below:
+```shell
+onboarder.exe -env=TEST
+```
+
+On linux/macos you need to open a terminal and then exeucte the application like the example below:
+```shell
+./onboarder -env=PROD
+```
 
 ![Onboarder1](onboarder1.png)
 
