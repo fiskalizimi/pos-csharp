@@ -169,6 +169,7 @@ public PosCoupon GetPosCoupon()
         Location = "Prishtine",
         OperatorId = "Kushtrimi",
         ApplicationId = 1,
+        ReferenceNo = 0,
         VerificationNo = "1234567890123456",
         Type = CouponType.Sale,
         Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
@@ -198,6 +199,7 @@ public PosCoupon GetPosCoupon()
 
     return posCoupon;
 }
+
 ```
 
 The POS Coupon includes:
@@ -209,6 +211,7 @@ The POS Coupon includes:
 * **Location** is the location/city of the Sale Point
 * **OperatorId** is the ID/Name of the operator/server
 * **ApplicationId** is the unique ID of the Application/POS System used. This code is provided by the Software provider that has implemented the POS Solution.
+* **ReferenceNo** is the number of the original coupon when there is a return or cancellation of a coupon. Otherwise the field is value should be 0.
 * **VerificationNo** is a unique value for each coupon, and it is 16 characters long max. Verification Number is used to check if the Coupon has been verified by the citizen.
 * **Type** this is the type of the coupon. It is an enum value and can be ```SALE```, ```RETURN``` or ```CANCEL```
 * **Time** the time fiscal coupon is issued. The value is Unix timestamp

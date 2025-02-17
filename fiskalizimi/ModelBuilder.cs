@@ -40,6 +40,7 @@ public class ModelBuilder
             OperatorId = "Kushtrimi",
             PosId = 1,
             ApplicationId = 1234,
+            ReferenceNo = 0,
             VerificationNo = "1234567890123456",
             Type = CouponType.Sale,
             Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
