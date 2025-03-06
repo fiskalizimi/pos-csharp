@@ -66,7 +66,7 @@ UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
 
     public static async Task SendQrCode()
     {
-        const string url = "https://fiskalizimi.atk-rks.org/citizen/coupon";
+        const string url = "https://fiskalizimi.atk-ks.org/citizen/coupon";
 
         try
         {
@@ -106,7 +106,7 @@ UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
     
     public static async Task SendPosCoupon()
     {
-        const string url = "https://fiskalizimi.atk-rks.org/pos/coupon";
+        const string url = "https://fiskalizimi.atk-ks.org/pos/coupon";
         
         try
         {
