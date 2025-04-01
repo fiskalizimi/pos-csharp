@@ -15,6 +15,8 @@ This repository provides a C# implementation for integrating with a fiscalizatio
     - [Citizen Coupon](#citizen-coupon)
     - [POS Coupon](#pos-coupon)
 - [PKI Key Generation](#key-generation)
+    - [Using Onboarding Tool](#using-onboarding-tool)
+    - [Using The API](#using-the-api)
 - [Digital Signing](#digital-signing)
     - [Steps to generate digital signature](#steps-to-generate-digital-signature)
     - [Using provided DLL to digitally sign strings](#using-provided-dll-to-digitally-sign-strings)
@@ -222,6 +224,8 @@ The POS Coupon includes:
 * **TotalTax** is the amount of the tax in total that customer will have to pay
 * **TotalNoTax** is the total amount without tax that customer will have to pay
 
+Upon receiving the POS Coupon, Fiscalisation Service will return a uniques uin64 value called ```TransactionNo```.
+
 **NOTE:** These details must match the [Citizen Coupon](#citizen-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
 
 ## Key Generation ##
@@ -229,6 +233,16 @@ The POS Coupon includes:
 There are different ways to generate a PKI key pair, depending on the operating system.
 
 **WARNING!** Each POS system (PC/till) needs to have a unique ID and its own PKI key pair. The private key should never leave the machine that it is generated on !!!
+
+To onboard your business, you need the following information:
+
+1. NUI of the business
+2. Fiscalization Number - (this is obtained from EDI)
+3. Pos ID - each POS should have a unique ID which is a numeric value
+4. Branch ID
+5. Application ID - obtained from the ATK upon certifying the POS Application
+
+### Using Onboarding Tool ###
 
 We have provided a tool that simplifies the process a lot by creating the key pair, generating a CSR and sending the CSR to ATK Certificate Authority to be digitally signed and verified.
 
@@ -238,12 +252,6 @@ If you have cloned this repository the tool for different operating systems is l
 * [onboarder for MacOS](https://github.com/fiskalizimi/pos-golang/raw/refs/heads/main/onboarder/onboarder-macos.zip)
 * [onboarder for Linux](https://github.com/fiskalizimi/pos-golang/raw/refs/heads/main/onboarder/onboarder-linux.zip)
 
-To onboard your business, you need the following information:
-
-1. NUI of the business
-2. Fiscalization Number - (this is obtained from EDI)
-3. Pos ID - each POS should have a unique ID which is a numeric value
-4. Branch ID
 
 Once you have downloaded the onboarder tool, and extracted/unzipped it to a folder, then you need to run the application.
 You need to provide an environment flag as an argument to the executable. For testing purposes the environment value should be ```TEST```, and for production the environment value should be ```PROD```
@@ -273,6 +281,61 @@ To view certificate and private key in PEM format, on the **Certificate** tab, f
 
 To extract certificate and private key in PEM format, on the **Certificate** tab, first tick the **Show private key** checkbox, then click on the **Export Certificate** button.
 This action will create another two files in the folder ```private-key.pem``` and ```signed-certificate.pem```
+
+### Using The API ###
+
+To use the API, you need to create new **ECDSA private key** using the **P-256 elliptic curve** and a secure random number generator.
+
+The next step is to get ```VerificationCode``` from the Fiscalisation Service. To get the ```VerificationCode``` a ```POST``` request needs to be sent to the ```https://fiskalizimi.atk-ks.org/ca/verify/{nui}``` and JSON body of:
+
+```
+{
+    "fiscalization_no" : "string" // The fiscalization number from EDI 
+    "pos_id" : "uint64"           // The Pos ID to be registered
+    "branch_no" : "uint64"        // The Branch ID where the POS is located
+    "application_id" : "uint64"   // The Application ID  
+}
+```
+
+The response will be a JSON:
+
+```
+{
+    "business_name" : "string"    // The name of the Business (to be used in CSR)
+    "verification_code: "uint64"  // The Verification Code (to be used in CSR)
+}
+```
+
+
+Once you have the **privte key**, **business name** and **verification code** then you need to generate a CSR with the following information:
+
+* **Country:** "RKS" (or "XK" if only 2 letters to be used for country) 
+* **Organization:** Business ID
+* **Organization Unit:** Pos ID
+* **Locality:** Branch ID
+* **CommonName:** The name of the business   
+
+After the CSR is generated and signed with the private key, then a POST request is sent to the ```https://fiskalizimi.atk-ks.org/ca/signcsr``` endpoint with the following JSON:
+
+```
+{
+    "business_name" : "string"     // name of the business
+    "business_id" : "uint64"       // Business ID (which is same as NUI)
+    "branch_id" : "uint64"         // Branch ID
+    "verification_no": "uint64"    // Verification Code
+    "pos_id" : "uint64"            // Pos ID
+    "csr" : "string"               // CSR in .pem format
+}
+```
+
+If everything is ok, a response will be retrieved with the signed certificate:
+```
+{
+    "signed_certificate" : "string" // Signed Certificate in .pem format
+}
+```
+
+This completes the onboarding step.
 
 **WARNING !** Make sure to keep private key safe.
 
