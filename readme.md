@@ -315,6 +315,18 @@ Once you have the **privte key**, **business name** and **verification code** th
 * **Locality:** Branch ID
 * **CommonName:** The name of the business   
 
+The CSR needs to be in ```.pem``` format. A sample of a CSR is below:
+```
+-----BEGIN CERTIFICATE REQUEST-----
+MIHwMIGWAgEAMDQxDDAKBgNVBAYTA1JLUzEKMAgGA1UEChMBMTEYMBYGA1UEAxMP
+Rml0aW0ncyBDb21wYW55MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhWoAnHs6
+/2EWf2bvtHrJwQXxtap8QjJlTbI3Y/eSvmtaBWdJyhs9QsakDLYfSytcyxbYDsYT
++uuo1knlR2xL2qAAMAoGCCqGSM49BAMCA0kAMEYCIQD3XmlSMXXlCoGL1i8FvjpM
+7cEFG0caI8lo6gwQvHy3jwIhAKP4m5nnbncPANmp++Z3vMFsSsua4iybjs7WYofX
+tAiM
+-----END CERTIFICATE REQUEST-----
+```
+
 After the CSR is generated and signed with the private key, then a POST request is sent to the ```https://fiskalizimi.atk-ks.org/ca/signcsr``` endpoint with the following JSON:
 
 ```
