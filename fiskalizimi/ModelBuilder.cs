@@ -13,6 +13,7 @@ public class ModelBuilder
             BusinessId = 60100,
             PosId = 1,
             CouponId = 10,
+            BranchId = 1,
             Type = CouponType.Sale,
             Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
             Total = 1820,
