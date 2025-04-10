@@ -226,7 +226,7 @@ The POS Coupon includes:
 * **TotalTax** is the amount of the tax in total that customer will have to pay
 * **TotalNoTax** is the total amount without tax that customer will have to pay
 
-Upon receiving the POS Coupon, Fiscalisation Service will return a uniques uin64 value called ```TransactionNo```.
+Upon receiving the POS Coupon, Fiscalisation Service will return a uniques uint64 value called ```TransactionNo```.
 
 **NOTE:** These details must match the [Citizen Coupon](#citizen-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
 
