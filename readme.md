@@ -235,6 +235,7 @@ Upon receiving the POS Coupon, Fiscalisation Service will return a uniques uint6
 }
 ```
 
+
 **NOTE:** These details must match the [Citizen Coupon](#citizen-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
 
 ## Key Generation ##
