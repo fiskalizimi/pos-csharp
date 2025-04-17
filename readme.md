@@ -346,6 +346,7 @@ After the CSR is generated and signed with the private key, then a POST request 
     "branch_id" : "uint64"         // Branch ID
     "verification_no": "uint64"    // Verification Code
     "pos_id" : "uint64"            // Pos ID
+    "application_id": "uint64"     // The Application ID  
     "csr" : "string"               // CSR in .pem format
 }
 ```
