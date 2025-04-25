@@ -154,6 +154,7 @@ The Citizen Coupon includes:
 * **Total** that represents the total value to be paid by customer
 * **TaxGroups** is an array of ```TaxGroup``` objects. Each ```TaxGroup``` object represents the details about tax category
 * **TotalTax** is the amount of the tax in total that customer will have to pay
+* **TotalNoTax** is the total amount without tax that customer will have to pay
 
 **NOTE:** These details must match the [POS Coupon](#pos-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
 
