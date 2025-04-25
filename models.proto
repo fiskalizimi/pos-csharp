@@ -5,13 +5,14 @@ package atk;
 option go_package = "./proto";
 
 enum CouponType {
-  Sale = 0;
-  Cancel = 1;
-  Return = 2;
+  UnknownType = 0;
+  Sale = 1;
+  Cancel = 2;
+  Return = 3;
 }
 
 enum PaymentType {
-  Unknown = 0;
+  UnknownPayment = 0;
   Cash = 1;
   CreditCard = 2;
   Voucher = 3;
@@ -59,28 +60,31 @@ message PosCoupon {
   int64 TotalTax = 15;
   int64 TotalNoTax = 16;
   uint64 ReferenceNo = 17;
+  uint64 TransactionNo = 18;
 }
 
 message CitizenCoupon {
   uint64 BusinessId = 1;
   uint64 CouponId = 2;
-  uint64 PosId = 3;
-  uint64 VerificationNo = 4;
+  uint64 BranchId = 3;
+  uint64 PosId = 4;
+  uint64 VerificationNo = 5;
+  CouponType Type = 6;
+  int64 Time = 7;
+  int64 Total = 8;
+  repeated TaxGroup TaxGroups = 9;
+  int64 TotalTax = 10;
+  int64 TotalNoTax = 11;
+}
+
+message QrCoupon {
+  uint64 BusinessId = 1;
+  uint64 CouponId = 2;
+  uint64 BranchId = 3;
+  uint64 PosId = 4;
   CouponType Type = 5;
   int64 Time = 6;
   int64 Total = 7;
   repeated TaxGroup TaxGroups = 8;
   int64 TotalTax = 9;
 }
-
-message QrCoupon {
-  uint64 BusinessId = 1;
-  uint64 CouponId = 2;
-  uint64 PosId = 3;
-  CouponType Type = 4;
-  int64 Time = 5;
-  int64 Total = 6;
-  repeated TaxGroup TaxGroups = 7;
-  int64 TotalTax = 8;
-}
-
