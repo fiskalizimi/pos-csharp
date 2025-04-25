@@ -133,9 +133,10 @@ public CitizenCoupon GetCitizenCoupon()
         {
             new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
             new TaxGroup { TaxRate = "D", TotalForTax = 320, TotalTax = 26 },
-            new TaxGroup { TaxRate = "E", TotalForTax = 1850, TotalTax = 189 }
+            new TaxGroup { TaxRate = "E", TotalForTax = 1050, TotalTax = 189 }
         },
-        TotalTax = 215
+        TotalTax = 215,
+        TotalNoTax = 1605
     };
     
     return citizenCoupon;
@@ -195,7 +196,7 @@ public PosCoupon GetPosCoupon()
         {
             new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
             new TaxGroup { TaxRate = "D", TotalForTax = 320, TotalTax = 26 },
-            new TaxGroup { TaxRate = "E", TotalForTax = 1850, TotalTax = 189 }
+            new TaxGroup { TaxRate = "E", TotalForTax = 1050, TotalTax = 189 }
         },
         TotalTax = 215,
         TotalNoTax = 1605
