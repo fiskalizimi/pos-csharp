@@ -54,7 +54,7 @@ Before integrating the system, ensure you have the following installed:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-repo/fiskalizimi-integration.git
+   git clone https://github.com/fiskalizimi/pos-csharp.git
    cd fiskalizimi-integration
    ```
 
@@ -272,12 +272,12 @@ You need to provide an environment flag as an argument to the executable. For te
 
 For example
 
-On Windows Platform you need to open a command prompt then execute the application like the example below:
+On Windows Platform you need to open a command prompt then execute the application like the example below (for test change environment to TEST):
 ```shell
-onboarder.exe -env=TEST
+onboarder.exe -env=PROD
 ```
 
-On linux/macos you need to open a terminal and then exeucte the application like the example below:
+On linux/macos you need to open a terminal and then exeucte the application like the example below (for test change environment to TEST):
 ```shell
 ./onboarder -env=PROD
 ```
@@ -300,7 +300,7 @@ This action will create another two files in the folder ```private-key.pem``` an
 
 To use the API, you need to create new **ECDSA private key** using the **P-256 elliptic curve** and a secure random number generator.
 
-The next step is to get ```VerificationCode``` from the Fiscalisation Service. To get the ```VerificationCode``` a ```POST``` request needs to be sent to the ```https://fiskalizimi.atk-ks.org/ca/verify/{nui}``` and JSON body of:
+The next step is to get ```VerificationCode``` from the Fiscalisation Service. To get the ```VerificationCode``` a ```POST``` request needs to be sent to the ```https://fiskalizimi.atk-ks.org/ca/verify/{nui}``` (for test the url is: ```https://fiskalizimi-test.atk-ks.org/ca/verify/{nui}```) and JSON body of:
 
 ```
 {
@@ -341,7 +341,7 @@ tAiM
 -----END CERTIFICATE REQUEST-----
 ```
 
-After the CSR is generated and signed with the private key, then a POST request is sent to the ```https://fiskalizimi.atk-ks.org/ca/signcsr``` endpoint with the following JSON:
+After the CSR is generated and signed with the private key, then a POST request is sent to the ```https://fiskalizimi.atk-ks.org/ca/signcsr``` (for test the url is: ```https://fiskalizimi-test.atk-ks.org/ca/signcsr```) endpoint with the following JSON:
 
 ```
 {
