@@ -61,6 +61,7 @@ message PosCoupon {
   int64 TotalNoTax = 16;
   uint64 ReferenceNo = 17;
   uint64 TransactionNo = 18;
+  int64 TotalDiscount = 19;
 }
 
 message CitizenCoupon {

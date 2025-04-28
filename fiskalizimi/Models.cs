@@ -29,7 +29,7 @@ namespace Atk {
             "IAEoAhINCgVUb3RhbBgFIAEoAxIPCgdUYXhSYXRlGAYgASgJEgwKBFR5cGUY",
             "ByABKAkiOQoHUGF5bWVudBIeCgRUeXBlGAEgASgOMhAuYXRrLlBheW1lbnRU",
             "eXBlEg4KBkFtb3VudBgCIAEoAyJCCghUYXhHcm91cBIPCgdUYXhSYXRlGAEg",
-            "ASgJEhMKC1RvdGFsRm9yVGF4GAIgASgDEhAKCFRvdGFsVGF4GAMgASgDIpcD",
+            "ASgJEhMKC1RvdGFsRm9yVGF4GAIgASgDEhAKCFRvdGFsVGF4GAMgASgDIq4D",
             "CglQb3NDb3Vwb24SEgoKQnVzaW5lc3NJZBgBIAEoBBIQCghDb3Vwb25JZBgC",
             "IAEoBBIQCghCcmFuY2hJZBgDIAEoBBIQCghMb2NhdGlvbhgEIAEoCRISCgpP",
             "cGVyYXRvcklkGAUgASgJEg0KBVBvc0lkGAYgASgEEhUKDUFwcGxpY2F0aW9u",
@@ -39,28 +39,28 @@ namespace Atk {
             "YXltZW50Eg0KBVRvdGFsGA0gASgDEiAKCVRheEdyb3VwcxgOIAMoCzINLmF0",
             "ay5UYXhHcm91cBIQCghUb3RhbFRheBgPIAEoAxISCgpUb3RhbE5vVGF4GBAg",
             "ASgDEhMKC1JlZmVyZW5jZU5vGBEgASgEEhUKDVRyYW5zYWN0aW9uTm8YEiAB",
-            "KAQi8gEKDUNpdGl6ZW5Db3Vwb24SEgoKQnVzaW5lc3NJZBgBIAEoBBIQCghD",
-            "b3Vwb25JZBgCIAEoBBIQCghCcmFuY2hJZBgDIAEoBBINCgVQb3NJZBgEIAEo",
-            "BBIWCg5WZXJpZmljYXRpb25ObxgFIAEoBBIdCgRUeXBlGAYgASgOMg8uYXRr",
-            "LkNvdXBvblR5cGUSDAoEVGltZRgHIAEoAxINCgVUb3RhbBgIIAEoAxIgCglU",
-            "YXhHcm91cHMYCSADKAsyDS5hdGsuVGF4R3JvdXASEAoIVG90YWxUYXgYCiAB",
-            "KAMSEgoKVG90YWxOb1RheBgLIAEoAyLBAQoIUXJDb3Vwb24SEgoKQnVzaW5l",
-            "c3NJZBgBIAEoBBIQCghDb3Vwb25JZBgCIAEoBBIQCghCcmFuY2hJZBgDIAEo",
-            "BBINCgVQb3NJZBgEIAEoBBIdCgRUeXBlGAUgASgOMg8uYXRrLkNvdXBvblR5",
-            "cGUSDAoEVGltZRgGIAEoAxINCgVUb3RhbBgHIAEoAxIgCglUYXhHcm91cHMY",
-            "CCADKAsyDS5hdGsuVGF4R3JvdXASEAoIVG90YWxUYXgYCSABKAMqPwoKQ291",
-            "cG9uVHlwZRIPCgtVbmtub3duVHlwZRAAEggKBFNhbGUQARIKCgZDYW5jZWwQ",
-            "AhIKCgZSZXR1cm4QAypzCgtQYXltZW50VHlwZRISCg5Vbmtub3duUGF5bWVu",
-            "dBAAEggKBENhc2gQARIOCgpDcmVkaXRDYXJkEAISCwoHVm91Y2hlchADEgoK",
-            "BkNoZXF1ZRAEEhIKDkNyeXB0b0N1cnJlbmN5EAUSCQoFT3RoZXIQBkIJWgcu",
-            "L3Byb3RvYgZwcm90bzM="));
+            "KAQSFQoNVG90YWxEaXNjb3VudBgTIAEoAyLyAQoNQ2l0aXplbkNvdXBvbhIS",
+            "CgpCdXNpbmVzc0lkGAEgASgEEhAKCENvdXBvbklkGAIgASgEEhAKCEJyYW5j",
+            "aElkGAMgASgEEg0KBVBvc0lkGAQgASgEEhYKDlZlcmlmaWNhdGlvbk5vGAUg",
+            "ASgEEh0KBFR5cGUYBiABKA4yDy5hdGsuQ291cG9uVHlwZRIMCgRUaW1lGAcg",
+            "ASgDEg0KBVRvdGFsGAggASgDEiAKCVRheEdyb3VwcxgJIAMoCzINLmF0ay5U",
+            "YXhHcm91cBIQCghUb3RhbFRheBgKIAEoAxISCgpUb3RhbE5vVGF4GAsgASgD",
+            "IsEBCghRckNvdXBvbhISCgpCdXNpbmVzc0lkGAEgASgEEhAKCENvdXBvbklk",
+            "GAIgASgEEhAKCEJyYW5jaElkGAMgASgEEg0KBVBvc0lkGAQgASgEEh0KBFR5",
+            "cGUYBSABKA4yDy5hdGsuQ291cG9uVHlwZRIMCgRUaW1lGAYgASgDEg0KBVRv",
+            "dGFsGAcgASgDEiAKCVRheEdyb3VwcxgIIAMoCzINLmF0ay5UYXhHcm91cBIQ",
+            "CghUb3RhbFRheBgJIAEoAyo/CgpDb3Vwb25UeXBlEg8KC1Vua25vd25UeXBl",
+            "EAASCAoEU2FsZRABEgoKBkNhbmNlbBACEgoKBlJldHVybhADKnMKC1BheW1l",
+            "bnRUeXBlEhIKDlVua25vd25QYXltZW50EAASCAoEQ2FzaBABEg4KCkNyZWRp",
+            "dENhcmQQAhILCgdWb3VjaGVyEAMSCgoGQ2hlcXVlEAQSEgoOQ3J5cHRvQ3Vy",
+            "cmVuY3kQBRIJCgVPdGhlchAGQglaBy4vcHJvdG9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Atk.CouponType), typeof(global::Atk.PaymentType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CouponItem), global::Atk.CouponItem.Parser, new[]{ "Name", "Price", "Unit", "Quantity", "Total", "TaxRate", "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.Payment), global::Atk.Payment.Parser, new[]{ "Type", "Amount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.TaxGroup), global::Atk.TaxGroup.Parser, new[]{ "TaxRate", "TotalForTax", "TotalTax" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.PosCoupon), global::Atk.PosCoupon.Parser, new[]{ "BusinessId", "CouponId", "BranchId", "Location", "OperatorId", "PosId", "ApplicationId", "VerificationNo", "Type", "Time", "Items", "Payments", "Total", "TaxGroups", "TotalTax", "TotalNoTax", "ReferenceNo", "TransactionNo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Atk.PosCoupon), global::Atk.PosCoupon.Parser, new[]{ "BusinessId", "CouponId", "BranchId", "Location", "OperatorId", "PosId", "ApplicationId", "VerificationNo", "Type", "Time", "Items", "Payments", "Total", "TaxGroups", "TotalTax", "TotalNoTax", "ReferenceNo", "TransactionNo", "TotalDiscount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.CitizenCoupon), global::Atk.CitizenCoupon.Parser, new[]{ "BusinessId", "CouponId", "BranchId", "PosId", "VerificationNo", "Type", "Time", "Total", "TaxGroups", "TotalTax", "TotalNoTax" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Atk.QrCoupon), global::Atk.QrCoupon.Parser, new[]{ "BusinessId", "CouponId", "BranchId", "PosId", "Type", "Time", "Total", "TaxGroups", "TotalTax" }, null, null, null, null)
           }));
@@ -1041,6 +1041,7 @@ namespace Atk {
       totalNoTax_ = other.totalNoTax_;
       referenceNo_ = other.referenceNo_;
       transactionNo_ = other.transactionNo_;
+      totalDiscount_ = other.totalDiscount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1263,6 +1264,18 @@ namespace Atk {
       }
     }
 
+    /// <summary>Field number for the "TotalDiscount" field.</summary>
+    public const int TotalDiscountFieldNumber = 19;
+    private long totalDiscount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long TotalDiscount {
+      get { return totalDiscount_; }
+      set {
+        totalDiscount_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1296,6 +1309,7 @@ namespace Atk {
       if (TotalNoTax != other.TotalNoTax) return false;
       if (ReferenceNo != other.ReferenceNo) return false;
       if (TransactionNo != other.TransactionNo) return false;
+      if (TotalDiscount != other.TotalDiscount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1321,6 +1335,7 @@ namespace Atk {
       if (TotalNoTax != 0L) hash ^= TotalNoTax.GetHashCode();
       if (ReferenceNo != 0UL) hash ^= ReferenceNo.GetHashCode();
       if (TransactionNo != 0UL) hash ^= TransactionNo.GetHashCode();
+      if (TotalDiscount != 0L) hash ^= TotalDiscount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1402,6 +1417,10 @@ namespace Atk {
         output.WriteRawTag(144, 1);
         output.WriteUInt64(TransactionNo);
       }
+      if (TotalDiscount != 0L) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt64(TotalDiscount);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1475,6 +1494,10 @@ namespace Atk {
         output.WriteRawTag(144, 1);
         output.WriteUInt64(TransactionNo);
       }
+      if (TotalDiscount != 0L) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt64(TotalDiscount);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1532,6 +1555,9 @@ namespace Atk {
       }
       if (TransactionNo != 0UL) {
         size += 2 + pb::CodedOutputStream.ComputeUInt64Size(TransactionNo);
+      }
+      if (TotalDiscount != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(TotalDiscount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1592,6 +1618,9 @@ namespace Atk {
       }
       if (other.TransactionNo != 0UL) {
         TransactionNo = other.TransactionNo;
+      }
+      if (other.TotalDiscount != 0L) {
+        TotalDiscount = other.TotalDiscount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1680,6 +1709,10 @@ namespace Atk {
             TransactionNo = input.ReadUInt64();
             break;
           }
+          case 152: {
+            TotalDiscount = input.ReadInt64();
+            break;
+          }
         }
       }
     #endif
@@ -1765,6 +1798,10 @@ namespace Atk {
           }
           case 144: {
             TransactionNo = input.ReadUInt64();
+            break;
+          }
+          case 152: {
+            TotalDiscount = input.ReadInt64();
             break;
           }
         }
