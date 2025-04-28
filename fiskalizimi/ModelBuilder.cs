@@ -67,7 +67,8 @@ public class ModelBuilder
                 new TaxGroup { TaxRate = "E", TotalForTax = 1050, TotalTax = 189 }
             },
             TotalTax = 215,
-            TotalNoTax = 1605
+            TotalNoTax = 1605,
+            TotalDiscount = 75,
         };
 
         return posCoupon;
