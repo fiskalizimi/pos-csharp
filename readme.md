@@ -253,7 +253,7 @@ To onboard your business, you need the following information:
 1. NUI of the business
 2. Fiscalization Number - (this is obtained from EDI)
 3. Pos ID - each POS should have a unique ID which is a numeric value
-4. Branch ID
+4. Branch ID - is the unique id of Branch where the POS system is located
 5. Application ID - obtained from the ATK upon certifying the POS Application
 
 ### Using Onboarding Tool ###
