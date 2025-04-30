@@ -364,12 +364,12 @@ If everything is ok, a response will be retrieved with the signed certificate:
 
 This completes the onboarding step.
 
-[!NOTE]
-For a complete example in C# .NET 8, a member of community [Gazmend Mehmeti](https://www.linkedin.com/in/gazmendmehmeti/) has shared a repo in [Github](https://github.com/gmehmeti/eFiscalX.Onboarder)
+>[!NOTE]
+>For a complete example in C# .NET 8, a member of community [Gazmend Mehmeti](https://www.linkedin.com/in/gazmendmehmeti/) has shared a repo in [Github](https://github.com/gmehmeti/eFiscalX.Onboarder)
 
 
-[!WARNING]
-**WARNING !** Make sure to keep private key safe.
+>[!WARNING]
+>**WARNING !** Make sure to keep private key safe.
 
 ## Digital Signing ##
 
