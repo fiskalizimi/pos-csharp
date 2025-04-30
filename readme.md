@@ -298,7 +298,7 @@ This action will create another two files in the folder ```private-key.pem``` an
 
 ### Using The API ###
 
-To use the API, you need to create new **ECDSA private key** using the **P-256 elliptic curve** and a secure random number generator.
+To use the API, you need to create new **ECDSA private key** using the **P-256 elliptic curve** and a secure random number generator. A sample code of how to generate a private key is on [Pki.cs](fiskalizimi/Pki.cs) class.
 
 The next step is to get ```VerificationCode``` from the Fiscalisation Service. To get the ```VerificationCode``` a ```POST``` request needs to be sent to the ```https://fiskalizimi.atk-ks.org/ca/verify/{nui}``` (for test the url is: ```https://fiskalizimi-test.atk-ks.org/ca/verify/{nui}```) and JSON body of:
 
@@ -340,6 +340,9 @@ Rml0aW0ncyBDb21wYW55MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhWoAnHs6
 tAiM
 -----END CERTIFICATE REQUEST-----
 ```
+
+A sample code of how to generate a CSR is on [Pki.cs](fiskalizimi/Pki.cs) class.
+
 
 After the CSR is generated and signed with the private key, then a POST request is sent to the ```https://fiskalizimi.atk-ks.org/ca/signcsr``` (for test the url is: ```https://fiskalizimi-test.atk-ks.org/ca/signcsr```) endpoint with the following JSON:
 

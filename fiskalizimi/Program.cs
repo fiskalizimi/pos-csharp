@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using System.Security.Cryptography;
 using System.Text;
 using Atk;
 using Google.Protobuf;
@@ -7,15 +8,6 @@ namespace fiskalizimi;
 
 public static class Fiskalizimi
 {
-    
-    private const string PrivateKeyPem = @"
------BEGIN EC PRIVATE KEY-----
-MHcCAQEEIAj6fmj1djrjdWXIzyaSUi1Bp8/p/vT9rhPSNJhnfgSUoAoGCCqGSM49
-AwEHoUQDQgAEZ0mBPR5oPsP+GJl0gAOvtZsubvTs/9nTL1p5qOEWRrKZJZU8Rrv8
-UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
------END EC PRIVATE KEY-----";
-    
-
     /// This method digitally signs the CitizenCoupon provided and returns the string that
     /// should be encoded into QR Code
     public static string SignCitizenCoupon(CitizenCoupon citizenCoupon, ISigner signer)
@@ -64,7 +56,7 @@ UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
         return (base64EncodedProto, signature);
     }
 
-    public static async Task SendQrCode()
+    public static async Task SendQrCode(string privateKeyPem)
     {
         const string url = "https://fiskalizimi.atk-ks.org/citizen/coupon";
 
@@ -73,7 +65,7 @@ UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
             // create the model builder
             var builder = new ModelBuilder();
             // create signer using the private key defined
-            var signer = new Signer(PrivateKeyPem);
+            var signer = new Signer(privateKeyPem);
 
             // get citizen coupon from the builder
             var citizenCoupon = builder.GetCitizenCoupon();
@@ -104,7 +96,7 @@ UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
         }
     }
     
-    public static async Task SendPosCoupon()
+    public static async Task SendPosCoupon(string privateKeyPem)
     {
         const string url = "https://fiskalizimi.atk-ks.org/pos/coupon";
         
@@ -113,7 +105,7 @@ UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
             // create the model builder
             var builder = new ModelBuilder();
             // create signer using the private key defined
-            var signer = new Signer(PrivateKeyPem);
+            var signer = new Signer(privateKeyPem);
 
             // get pos coupon from the builder
             var posCoupon = builder.GetPosCoupon();
@@ -146,7 +138,31 @@ UwqQASBfimRaEsdQli0DtCx0yKDZ3zE73Q==
     
     public static async Task Main(string[] args)
     {
-        await SendPosCoupon();
-        await SendQrCode();
+        // Simulated input values
+        string company = "TEST CORP";
+        string nui = "510600700";
+        string branchID = "1";
+        string posID = "1";
+
+        // Generate ECDSA private key (P-256)
+        ECDsa privateKey = Pki.GeneratePrivateKey();
+        byte[] pkcs8Bytes = privateKey.ExportPkcs8PrivateKey();
+        string privateKeyPem = Pki.ExportToPem("EC PRIVATE KEY", pkcs8Bytes);
+
+        // Output to console
+        Console.WriteLine("Generated private key:");
+        Console.WriteLine(privateKeyPem);
+
+        
+        // Create CSR
+        byte[] csrDer = Pki.CreateCsr(privateKey, company, nui, branchID, posID);
+        string csrPem = Pki.ExportToPem("CERTIFICATE REQUEST", csrDer);
+
+        // Output to console
+        Console.WriteLine("Generated CSR:");
+        Console.WriteLine(csrPem);
+        
+        await SendPosCoupon(privateKeyPem);
+        await SendQrCode(privateKeyPem);
     }
 }
