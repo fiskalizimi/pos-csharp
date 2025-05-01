@@ -235,10 +235,6 @@ The POS Coupon includes:
     * ```SALE``` (numeric value of 1) - is for a sale 
     * ```RETURN``` (numeric value of 2) - is when some items are returned. When the coupon type is ```SALE``` the **ReferenceNo** must be the **CouponId** of the original sale
     * ```CANCEL``` (numeric value of 3) - is when the coupon is cancelled. When the coupon type is ```CANCEL``` the **ReferenceNo** must be the **CouponId** of the original sale
-
-    >[!WARNING] 
-    >If the **ReferenceNo** is missing when the coupon type is ```RETURN``` or ```CANCEL``` the coupon will be rejected!
-
 * **Time** the time fiscal coupon is issued. The value is Unix timestamp
 * **Items** is an array of ```CouponItem``` objects. Each ```CouponItem``` represents an item sold to the customer, and has the following information:
     * **Name** - is the name of the article
@@ -276,6 +272,8 @@ Upon receiving the POS Coupon, Fiscalisation Service will return a uniques uint6
 
 >[!WARNING]
 >**NOTE:** These details must match the [Citizen Coupon](#citizen-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
+>
+>**NOTE:** If the **ReferenceNo** is missing when the coupon type is ```RETURN``` or ```CANCEL``` the coupon will be rejected!
 
 ## Key Generation ##
 
