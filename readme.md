@@ -156,9 +156,9 @@ The Citizen Coupon includes:
     * ```CANCEL``` (numeric value of 3) - is when the coupon is cancelled. When the coupon type is ```CANCEL``` the **ReferenceNo** must be the **CouponId** of the original sale
 
 
-    > *WARNING!*
-    >    
-    >If the **ReferenceNo** is missing when the coupon type is ```RETURN``` or ```CANCEL``` the coupon will be rejected!
+        > *WARNING!*
+        >    
+        >If the **ReferenceNo** is missing when the coupon type is ```RETURN``` or ```CANCEL``` the coupon will be rejected!
 
 * **Time** the time fiscal coupon is issued. The value is Unix timestamp
 * **Total** that represents the total value to be paid by customer
