@@ -167,7 +167,8 @@ The Citizen Coupon includes:
 * **TotalTax** is the amount of the tax in total that customer will have to pay
 * **TotalNoTax** is the total amount without tax that customer will have to pay
 
-**NOTE:** These details must match the [POS Coupon](#pos-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
+>[!WARNING]
+>**NOTE:** These details must match the [POS Coupon](#pos-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
 
 
 ### POS Coupon ###
@@ -273,14 +274,15 @@ Upon receiving the POS Coupon, Fiscalisation Service will return a uniques uint6
 }
 ```
 
-
-**NOTE:** These details must match the [Citizen Coupon](#citizen-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
+>[!WARNING]
+>**NOTE:** These details must match the [Citizen Coupon](#citizen-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
 
 ## Key Generation ##
 
 There are different ways to generate a PKI key pair, depending on the operating system.
 
-**WARNING!** Each POS system (PC/till) needs to have a unique ID and its own PKI key pair. The private key should never leave the machine that it is generated on !!!
+>[!WARNING]
+>**WARNING!** Each POS system (PC/till) needs to have a unique ID and its own PKI key pair. The private key should never leave the machine that it is generated on !!!
 
 To onboard your business, you need the following information:
 
@@ -633,5 +635,6 @@ To execute the program and send the coupons:
 dotnet run
 ```
 
-Make sure to configure the correct URL of the fiscalization service and have a valid ECDSA private key to sign the coupons.
+>[!NOTE]
+>Make sure to configure the correct URL of the fiscalization service and have a valid ECDSA private key to sign the coupons.
 
