@@ -155,7 +155,8 @@ The Citizen Coupon includes:
     * ```RETURN``` (numeric value of 2) - is when some items are returned. When the coupon type is ```SALE``` the **ReferenceNo** must be the **CouponId** of the original sale
     * ```CANCEL``` (numeric value of 3) - is when the coupon is cancelled. When the coupon type is ```CANCEL``` the **ReferenceNo** must be the **CouponId** of the original sale
 
-    >[!WARNING] 
+    >[!WARNING]
+     
     >If the **ReferenceNo** is missing when the coupon type is ```RETURN``` or ```CANCEL``` the coupon will be rejected!
 
 * **Time** the time fiscal coupon is issued. The value is Unix timestamp
@@ -239,6 +240,7 @@ The POS Coupon includes:
 
     >[!WARNING] 
     >If the **ReferenceNo** is missing when the coupon type is ```RETURN``` or ```CANCEL``` the coupon will be rejected!
+
 * **Time** the time fiscal coupon is issued. The value is Unix timestamp
 * **Items** is an array of ```CouponItem``` objects. Each ```CouponItem``` represents an item sold to the customer, and has the following information:
     * **Name** - is the name of the article
