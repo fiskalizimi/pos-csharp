@@ -20,13 +20,13 @@ public static class Fiskalizimi
 
         // convert the base64 string of the citizen coupon to byte array
         var base64EncodedBytes = Encoding.UTF8.GetBytes(base64EncodedProto);
-        
+
         // digitally sign the bytes and return the signature
         string signature = signer.SignBytes(base64EncodedBytes);
-        
+
         Console.WriteLine($"Coupon   : {base64EncodedProto}");
         Console.WriteLine($"signature: {signature}");
-        
+
         // Combine the encoded data and signature to create QR Code string and return it
         string qrCodeString = $"{base64EncodedProto}|{signature}";
         Console.WriteLine($"qr code  : {qrCodeString}");
@@ -39,26 +39,28 @@ public static class Fiskalizimi
     {
         // Serialize the pos coupon message to protobuf binary
         byte[] posCouponProto = posCoupon.ToByteArray();
-        
+
         // convert the serialized protobuf of pos coupon to base64 string
         var base64EncodedProto = Convert.ToBase64String(posCouponProto);
 
         // convert the base64 string of the pos coupon to byte array
         var base64EncodedBytes = Encoding.UTF8.GetBytes(base64EncodedProto);
-        
+
         // digitally sign the bytes
         string signature = signer.SignBytes(base64EncodedBytes);
- 
+
         Console.WriteLine($"Coupon   : {base64EncodedProto}");
         Console.WriteLine($"signature: {signature}");
-        
+
         // return the coupon and signature as base64 strings
         return (base64EncodedProto, signature);
     }
 
-    public static async Task SendQrCode(string privateKeyPem)
+    public static async Task SendQrCode(string privateKeyPem, bool isInProduction)
     {
-        const string url = "https://fiskalizimi.atk-ks.org/citizen/coupon";
+        string url = "https://fiskalizimi.atk-ks.org/citizen/coupon";
+        if (!isInProduction)
+            url = "https://fiskalizimi-test.atk-ks.org/citizen/coupon";
 
         try
         {
@@ -72,18 +74,18 @@ public static class Fiskalizimi
 
             // digitally sign citizen coupon and get the qr code 
             var qrCode = SignCitizenCoupon(citizenCoupon, signer);
-            
+
             // prepare the request
             var request = new
             {
                 citizen_id = 1,
                 qr_code = qrCode
             };
-        
+
             // POST the request to fiscalisation service 
             HttpClient client = new HttpClient();
             var response = await client.PostAsJsonAsync(url, request);
-            
+
             // ensure that the response is success (2xx)
             response.EnsureSuccessStatusCode();
             Console.WriteLine("Qr code sent successfully");
@@ -95,11 +97,13 @@ public static class Fiskalizimi
             Console.WriteLine(e);
         }
     }
-    
-    public static async Task SendPosCoupon(string privateKeyPem)
+
+    public static async Task SendPosCoupon(string privateKeyPem, bool isInProduction)
     {
-        const string url = "https://fiskalizimi.atk-ks.org/pos/coupon";
-        
+        string url = "https://fiskalizimi.atk-ks.org/pos/coupon";
+        if (!isInProduction)
+            url = "https://fiskalizimi-test.atk-ks.org/pos/coupon";
+
         try
         {
             // create the model builder
@@ -119,11 +123,11 @@ public static class Fiskalizimi
                 details = coupon,
                 signature = signature
             };
-        
+
             // POST the request to fiscalisation service 
             HttpClient client = new HttpClient();
             var response = await client.PostAsJsonAsync(url, request);
-            
+
             // ensure that the response is success (2xx)
             response.EnsureSuccessStatusCode();
             Console.WriteLine("Qr code sent successfully");
@@ -135,34 +139,36 @@ public static class Fiskalizimi
             Console.WriteLine(e);
         }
     }
-    
+
     public static async Task Main(string[] args)
     {
         // Simulated input values
-        string company = "TEST CORP";
-        string nui = "510600700";
-        string branchID = "1";
-        string posID = "1";
+        var csrRequest = new CsrRequest
+        {
+            Country = "RKS",
+            BusinessName = "TEST CORP",
+            Nui = 510600700,
+            BranchId = 1,
+            PosId = 1
+        };
 
         // Generate ECDSA private key (P-256)
         ECDsa privateKey = Pki.GeneratePrivateKey();
-        byte[] pkcs8Bytes = privateKey.ExportPkcs8PrivateKey();
-        string privateKeyPem = Pki.ExportToPem("EC PRIVATE KEY", pkcs8Bytes);
+        string privateKeyPem = privateKey.ExportPkcs8PrivateKeyPem();
 
         // Output to console
         Console.WriteLine("Generated private key:");
         Console.WriteLine(privateKeyPem);
 
-        
+
         // Create CSR
-        byte[] csrDer = Pki.CreateCsr(privateKey, company, nui, branchID, posID);
-        string csrPem = Pki.ExportToPem("CERTIFICATE REQUEST", csrDer);
+        string csrPem = Pki.CreateCsr(privateKey, csrRequest);
 
         // Output to console
         Console.WriteLine("Generated CSR:");
         Console.WriteLine(csrPem);
-        
-        await SendPosCoupon(privateKeyPem);
-        await SendQrCode(privateKeyPem);
+
+        await SendPosCoupon(privateKeyPem, isInProduction: false);
+        await SendQrCode(privateKeyPem, isInProduction: false);
     }
 }
