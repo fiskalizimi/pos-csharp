@@ -165,7 +165,7 @@ The Citizen Coupon includes:
 
 >[!WARNING]
 >**NOTE:** These details must match the [POS Coupon](#pos-coupon) details, otherwise the coupon will be marked as ```FAILED VERIFICATION``` !
-
+>
 >**NOTE:** If the **ReferenceNo** is missing when the coupon type is ```RETURN``` or ```CANCEL``` the coupon will be rejected!
 
 
