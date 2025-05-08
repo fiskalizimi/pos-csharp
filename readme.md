@@ -61,7 +61,7 @@ Before integrating the system, ensure you have the following installed:
    ```
 ### Swagger Documentation ###
 
-The swagger documentation is located at [Swagger Test](https://fiskalizimi-test.atk-ks.org/swagger/index.html)
+The swagger documentation is located at [Swagger](https://fiskalizimi-test.atk-ks.org/swagger/index.html)
 
 ## Generating PROTOBUF models ##
 
@@ -578,7 +578,7 @@ public static string SignCitizenCoupon(CitizenCoupon citizenCoupon, ISigner sign
 
 ### Sending Citizen Coupons ###
 
-
+>>[!WARNING]
 >**NOTE:** this part applies to Mobile App that will be used for verifying coupons. 
 >It is **NOT** relevant to POS systems.
 
