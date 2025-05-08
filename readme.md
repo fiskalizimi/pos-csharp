@@ -578,7 +578,7 @@ public static string SignCitizenCoupon(CitizenCoupon citizenCoupon, ISigner sign
 
 ### Sending Citizen Coupons ###
 
->[!Information]
+
 >**NOTE:** this part is applies to Mobile App that will be used for verifying coupons. 
 >It is **NOT** relevant to POS systems.
 
