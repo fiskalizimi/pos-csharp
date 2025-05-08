@@ -8,6 +8,7 @@ This repository provides a C# implementation for integrating with a fiscalizatio
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
+    - [Swagger Documentation](#swagger-documentation)
 - [Generating PROTOBUF models](#generating-protobuf-models)
     - [Manually generating Models](#manually-generating-models)
     - [Let .NET generate models automatically](#let-net-generate-models-automatically)
@@ -41,9 +42,9 @@ This project provides a set of C# classes to interact with a fiscalization syste
 - **ECDSA**: Elliptic curve algorithm used for digital signatures.
 - **HttpClient**: For sending data to the fiscalization service.
 
-## Getting Started
+## Getting Started ##
 
-### Prerequisites
+### Prerequisites ###
 
 Before integrating the system, ensure you have the following installed:
 
@@ -51,13 +52,16 @@ Before integrating the system, ensure you have the following installed:
 - [Protobuf Compiler](https://developers.google.com/protocol-buffers)
 - A valid [ECDSA private key](#key-generation) for signing the data.
 
-### Installation
+### Installation ###
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/fiskalizimi/pos-csharp.git
    cd fiskalizimi-integration
    ```
+### Swagger Documentation ###
+
+The swagger documentation is located at [Swagger Test](https://fiskalizimi-test.atk-ks.org/swagger/index.html)
 
 ## Generating PROTOBUF models ##
 
@@ -267,6 +271,14 @@ Upon receiving the POS Coupon, Fiscalisation Service will return a uniques uint6
 {
     "message" : "string"    // The message
     "transaction_id: "uint64"  // The unique Transaction ID for this coupon
+}
+```
+
+If anything has gone wrong you will receive a response (400 BardRequest or 500 InternalServer) in a JSON like below:
+
+```
+{
+  "error": "details and signature don't match"
 }
 ```
 
@@ -565,6 +577,11 @@ public static string SignCitizenCoupon(CitizenCoupon citizenCoupon, ISigner sign
 ## Sending Data to Fiscalization Service ##
 
 ### Sending Citizen Coupons ###
+
+>[!Information]
+>**NOTE:** this part is applies to Mobile App that will be used for verifying coupons. 
+>It is **NOT** relevant to POS systems.
+
 
 QR Code will be scanned by the Citizen Mobile App, which in turn will send the data to the Fiscalization System for verification.
 This method mimics the Citizen Mobile App, and is used for testing purposes. The [SendQrCode method](fiskalizimi/Program.cs) sends the serialized and signed citizen coupon to the fiscalization service.
