@@ -122,6 +122,9 @@ Here are the steps to generate Protobuf models:
 
 The ```CitizenCoupon``` represents a simplified receipt that will be the part of QR Code. Below is the example structure created by the [```ModelBuilder``` class](fiskalizimi/ModelBuilder.cs):
 
+>[!WARNING]
+>**NOTE:** These numbers are for representation purposes only! They do not show how to calculate tax. For proper ways of Tax calculations please consult the official documentation at [ATK site](https://www.atk-ks.org/udhezues-manuale-dhe-rregullore/)
+
 ```
 public CitizenCoupon GetCitizenCoupon()
 {
@@ -134,16 +137,16 @@ public CitizenCoupon GetCitizenCoupon()
         Type = CouponType.Sale,
         Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
         Total = 1820,
-        TaxGroups =
         {
             new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
-            new TaxGroup { TaxRate = "D", TotalForTax = 320, TotalTax = 26 },
-            new TaxGroup { TaxRate = "E", TotalForTax = 1050, TotalTax = 189 }
+            new TaxGroup { TaxRate = "D", TotalForTax = 296, TotalTax = 24 },
+            new TaxGroup { TaxRate = "E", TotalForTax = 889, TotalTax = 161 }
         },
-        TotalTax = 215,
-        TotalNoTax = 1605
-    };
-    
+        TotalTax = 185,
+        TotalNoTax = 1635,
+        TotalDiscount = 0
+    };					
+
     return citizenCoupon;
 }
 ```
@@ -181,18 +184,21 @@ The Citizen Coupon includes:
 
 The PosCoupon includes all details of the POS Coupon that will be printed and given to the customer located in [```ModelBuilder``` class](fiskalizimi/ModelBuilder.cs)
 
+>[!WARNING]
+>**NOTE:** These numbers are for representation purposes only! They do not show how to calculate tax. For proper ways of Tax calculations please consult the official documentation at [ATK site](https://www.atk-ks.org/udhezues-manuale-dhe-rregullore/)
+
 ```
 public PosCoupon GetPosCoupon()
 {
     var posCoupon = new PosCoupon
     {
-        BusinessId = 1,
-        PosId = 1,
-        CouponId = 1234,
-        BranchId = 3,
+        BusinessId = 60100,
+        CouponId = 10,
+        BranchId = 1,
         Location = "Prishtine",
         OperatorId = "Kushtrimi",
-        ApplicationId = 1,
+        PosId = 1,
+        ApplicationId = 1234,
         ReferenceNo = 0,
         VerificationNo = "1234567890123456",
         Type = CouponType.Sale,
@@ -214,12 +220,12 @@ public PosCoupon GetPosCoupon()
         TaxGroups =
         {
             new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
-            new TaxGroup { TaxRate = "D", TotalForTax = 320, TotalTax = 26 },
-            new TaxGroup { TaxRate = "E", TotalForTax = 1050, TotalTax = 189 }
+            new TaxGroup { TaxRate = "D", TotalForTax = 296, TotalTax = 24 },
+            new TaxGroup { TaxRate = "E", TotalForTax = 889, TotalTax = 161 }
         },
-        TotalTax = 215,
-        TotalNoTax = 1605,
-        TotalDiscount = 75
+        TotalTax = 185,
+        TotalNoTax = 1635,
+        TotalDiscount = 0,
     };
 
     return posCoupon;

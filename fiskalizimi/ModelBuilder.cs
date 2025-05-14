@@ -10,23 +10,23 @@ public class ModelBuilder
     {
         var citizenCoupon = new CitizenCoupon
         {
-            BusinessId = 60100,
+            BusinessId = 1,
             PosId = 1,
-            CouponId = 10,
-            BranchId = 1,
+            BranchId:   1,
+            CouponId = 1234,
             Type = CouponType.Sale,
             Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
             Total = 1820,
-            TaxGroups =
             {
                 new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
-                new TaxGroup { TaxRate = "D", TotalForTax = 320, TotalTax = 26 },
-                new TaxGroup { TaxRate = "E", TotalForTax = 1050, TotalTax = 189 }
+                new TaxGroup { TaxRate = "D", TotalForTax = 296, TotalTax = 24 },
+                new TaxGroup { TaxRate = "E", TotalForTax = 889, TotalTax = 161 }
             },
-            TotalTax = 215,
-            TotalNoTax = 1605
-        };
-        
+            TotalTax = 185,
+            TotalNoTax = 1635,
+            TotalDiscount = 0
+        };					
+
         return citizenCoupon;
     }
 
@@ -63,12 +63,12 @@ public class ModelBuilder
             TaxGroups =
             {
                 new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
-                new TaxGroup { TaxRate = "D", TotalForTax = 320, TotalTax = 26 },
-                new TaxGroup { TaxRate = "E", TotalForTax = 1050, TotalTax = 189 }
+                new TaxGroup { TaxRate = "D", TotalForTax = 296, TotalTax = 24 },
+                new TaxGroup { TaxRate = "E", TotalForTax = 889, TotalTax = 161 }
             },
-            TotalTax = 215,
-            TotalNoTax = 1605,
-            TotalDiscount = 75,
+            TotalTax = 185,
+            TotalNoTax = 1635,
+            TotalDiscount = 0,
         };
 
         return posCoupon;
