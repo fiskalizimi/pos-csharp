@@ -12,20 +12,20 @@ public class ModelBuilder
         {
             BusinessId = 1,
             PosId = 1,
-            BranchId:   1,
+            BranchId = 1,
             CouponId = 1234,
             Type = CouponType.Sale,
-            Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
+            Time = new DateTimeOffset(2024, 10, 1, 15, 30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
             Total = 1820,
-            {
+            VerificationNo = 1234567890123456,
+            TaxGroups = {
                 new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
                 new TaxGroup { TaxRate = "D", TotalForTax = 296, TotalTax = 24 },
                 new TaxGroup { TaxRate = "E", TotalForTax = 889, TotalTax = 161 }
             },
             TotalTax = 185,
-            TotalNoTax = 1635,
-            TotalDiscount = 0
-        };					
+            TotalNoTax = 1635            
+        };
 
         return citizenCoupon;
     }
@@ -45,7 +45,7 @@ public class ModelBuilder
             ReferenceNo = 0,
             VerificationNo = "1234567890123456",
             Type = CouponType.Sale,
-            Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
+            Time = new DateTimeOffset(2024, 10, 1, 15, 30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
             Items =
             {
                 new CouponItem { Name = "uje rugove", Price = 150, Unit = "cope", Quantity = 3, Total = 450, TaxRate = "C", Type = "TT" },
