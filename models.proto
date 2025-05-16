@@ -69,7 +69,7 @@ message CitizenCoupon {
   uint64 CouponId = 2;
   uint64 BranchId = 3;
   uint64 PosId = 4;
-  uint64 VerificationNo = 5;
+  string VerificationNo = 5;
   CouponType Type = 6;
   int64 Time = 7;
   int64 Total = 8;

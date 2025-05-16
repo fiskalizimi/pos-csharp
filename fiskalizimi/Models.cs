@@ -42,7 +42,7 @@ namespace Atk {
             "KAQSFQoNVG90YWxEaXNjb3VudBgTIAEoAyLyAQoNQ2l0aXplbkNvdXBvbhIS",
             "CgpCdXNpbmVzc0lkGAEgASgEEhAKCENvdXBvbklkGAIgASgEEhAKCEJyYW5j",
             "aElkGAMgASgEEg0KBVBvc0lkGAQgASgEEhYKDlZlcmlmaWNhdGlvbk5vGAUg",
-            "ASgEEh0KBFR5cGUYBiABKA4yDy5hdGsuQ291cG9uVHlwZRIMCgRUaW1lGAcg",
+            "ASgJEh0KBFR5cGUYBiABKA4yDy5hdGsuQ291cG9uVHlwZRIMCgRUaW1lGAcg",
             "ASgDEg0KBVRvdGFsGAggASgDEiAKCVRheEdyb3VwcxgJIAMoCzINLmF0ay5U",
             "YXhHcm91cBIQCghUb3RhbFRheBgKIAEoAxISCgpUb3RhbE5vVGF4GAsgASgD",
             "IsEBCghRckNvdXBvbhISCgpCdXNpbmVzc0lkGAEgASgEEhAKCENvdXBvbklk",
@@ -89,6 +89,7 @@ namespace Atk {
   #endregion
 
   #region Messages
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class CouponItem : pb::IMessage<CouponItem>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -418,7 +419,11 @@ namespace Atk {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -461,7 +466,11 @@ namespace Atk {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -500,6 +509,7 @@ namespace Atk {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Payment : pb::IMessage<Payment>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -684,7 +694,11 @@ namespace Atk {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -707,7 +721,11 @@ namespace Atk {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -726,6 +744,7 @@ namespace Atk {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class TaxGroup : pb::IMessage<TaxGroup>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -939,7 +958,11 @@ namespace Atk {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -966,7 +989,11 @@ namespace Atk {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -989,6 +1016,7 @@ namespace Atk {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class PosCoupon : pb::IMessage<PosCoupon>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1633,7 +1661,11 @@ namespace Atk {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1724,7 +1756,11 @@ namespace Atk {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1811,6 +1847,7 @@ namespace Atk {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class CitizenCoupon : pb::IMessage<CitizenCoupon>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1915,13 +1952,13 @@ namespace Atk {
 
     /// <summary>Field number for the "VerificationNo" field.</summary>
     public const int VerificationNoFieldNumber = 5;
-    private ulong verificationNo_;
+    private string verificationNo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong VerificationNo {
+    public string VerificationNo {
       get { return verificationNo_; }
       set {
-        verificationNo_ = value;
+        verificationNo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2033,7 +2070,7 @@ namespace Atk {
       if (CouponId != 0UL) hash ^= CouponId.GetHashCode();
       if (BranchId != 0UL) hash ^= BranchId.GetHashCode();
       if (PosId != 0UL) hash ^= PosId.GetHashCode();
-      if (VerificationNo != 0UL) hash ^= VerificationNo.GetHashCode();
+      if (VerificationNo.Length != 0) hash ^= VerificationNo.GetHashCode();
       if (Type != global::Atk.CouponType.UnknownType) hash ^= Type.GetHashCode();
       if (Time != 0L) hash ^= Time.GetHashCode();
       if (Total != 0L) hash ^= Total.GetHashCode();
@@ -2074,9 +2111,9 @@ namespace Atk {
         output.WriteRawTag(32);
         output.WriteUInt64(PosId);
       }
-      if (VerificationNo != 0UL) {
-        output.WriteRawTag(40);
-        output.WriteUInt64(VerificationNo);
+      if (VerificationNo.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(VerificationNo);
       }
       if (Type != global::Atk.CouponType.UnknownType) {
         output.WriteRawTag(48);
@@ -2125,9 +2162,9 @@ namespace Atk {
         output.WriteRawTag(32);
         output.WriteUInt64(PosId);
       }
-      if (VerificationNo != 0UL) {
-        output.WriteRawTag(40);
-        output.WriteUInt64(VerificationNo);
+      if (VerificationNo.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(VerificationNo);
       }
       if (Type != global::Atk.CouponType.UnknownType) {
         output.WriteRawTag(48);
@@ -2172,8 +2209,8 @@ namespace Atk {
       if (PosId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(PosId);
       }
-      if (VerificationNo != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VerificationNo);
+      if (VerificationNo.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(VerificationNo);
       }
       if (Type != global::Atk.CouponType.UnknownType) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
@@ -2215,7 +2252,7 @@ namespace Atk {
       if (other.PosId != 0UL) {
         PosId = other.PosId;
       }
-      if (other.VerificationNo != 0UL) {
+      if (other.VerificationNo.Length != 0) {
         VerificationNo = other.VerificationNo;
       }
       if (other.Type != global::Atk.CouponType.UnknownType) {
@@ -2245,7 +2282,11 @@ namespace Atk {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2265,8 +2306,8 @@ namespace Atk {
             PosId = input.ReadUInt64();
             break;
           }
-          case 40: {
-            VerificationNo = input.ReadUInt64();
+          case 42: {
+            VerificationNo = input.ReadString();
             break;
           }
           case 48: {
@@ -2304,7 +2345,11 @@ namespace Atk {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -2324,8 +2369,8 @@ namespace Atk {
             PosId = input.ReadUInt64();
             break;
           }
-          case 40: {
-            VerificationNo = input.ReadUInt64();
+          case 42: {
+            VerificationNo = input.ReadString();
             break;
           }
           case 48: {
@@ -2359,6 +2404,7 @@ namespace Atk {
 
   }
 
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class QrCoupon : pb::IMessage<QrCoupon>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2735,7 +2781,11 @@ namespace Atk {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2786,7 +2836,11 @@ namespace Atk {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
