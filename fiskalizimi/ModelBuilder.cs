@@ -17,7 +17,7 @@ public class ModelBuilder
             Type = CouponType.Sale,
             Time = new DateTimeOffset(2024, 10, 1, 15, 30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
             Total = 1820,
-            VerificationNo = 1234567890123456,
+            VerificationNo = "1234567890123456",
             TaxGroups = {
                 new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
                 new TaxGroup { TaxRate = "D", TotalForTax = 296, TotalTax = 24 },
