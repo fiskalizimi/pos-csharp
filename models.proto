@@ -58,6 +58,7 @@ message PosCoupon {
   repeated TaxGroup TaxGroups = 14;
   int64 TotalTax = 15;
   int64 TotalNoTax = 16;
+  uint64 ReferenceNo = 17;
 }
 
 message CitizenCoupon {

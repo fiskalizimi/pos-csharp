@@ -38,6 +38,20 @@ This project provides a set of C# classes to interact with a fiscalization syste
 - **ECDSA**: Elliptic curve algorithm used for digital signatures.
 - **HttpClient**: For sending data to the fiscalization service.
 
+## Important Notes ##
+
+Please provide all prices as integers, where the final four digits represent the ten-thousandths place (1/100th of a cent).
+Values should be stored as integers in €0.0001 units (e.g. €1.00 = 10000).
+
+Examples:
+
+| Literal Value | Integer Representation |
+|--------------:|-----------------------:|
+|         €1.00 |                  10000 |
+|         €0.01 |                    100 |
+|      €12.3456 |                 123456 |
+|       €0.0001 |                      1 |
+
 ## Getting Started
 
 ### Prerequisites
@@ -122,22 +136,23 @@ public CitizenCoupon GetCitizenCoupon()
     {
         BusinessId = 1,
         PosId = 1,
-        CouponId = 1234,
+        CouponId = 123400,
         Type = CouponType.Sale,
         Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
-        Total = 1820,
+        Total = 182000,
         TaxGroups =
         {
-            new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
-            new TaxGroup { TaxRate = "D", TotalForTax = 320, TotalTax = 26 },
-            new TaxGroup { TaxRate = "E", TotalForTax = 1850, TotalTax = 189 }
+            new TaxGroup { TaxRate = "C", TotalForTax = 45000, TotalTax = 0 },
+            new TaxGroup { TaxRate = "D", TotalForTax = 32000, TotalTax = 2600 },
+            new TaxGroup { TaxRate = "E", TotalForTax = 185000, TotalTax = 18900 }
         },
-        TotalTax = 215
+        TotalTax = 21500
     };
     
     return citizenCoupon;
 }
 ```
+**NOTE:**  Please check [Important Notes](#important-notes) to understand how the prices are provided
 
 The Citizen Coupon includes:
 
@@ -169,36 +184,41 @@ public PosCoupon GetPosCoupon()
         Location = "Prishtine",
         OperatorId = "Kushtrimi",
         ApplicationId = 1,
+        ReferenceNo = 0,
         VerificationNo = "1234567890123456",
         Type = CouponType.Sale,
         Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
         Items =
         {
-            new CouponItem { Name = "uje rugove", Price = 150, Unit = "cope", Quantity = 3, Total = 450, TaxRate = "C", Type = "TT" },
-            new CouponItem { Name = "sendviq", Price = 300, Unit = "cope", Quantity = 2, Total = 600, TaxRate = "E", Type = "TT" },
-            new CouponItem { Name = "buke", Price = 80, Unit = "cope", Quantity = 4, Total = 320, TaxRate = "D", Type = "TT" },
-            new CouponItem { Name = "machiato e madhe", Unit = "cope", Price = 150, Quantity = 3, Total = 450, TaxRate = "E", Type = "TT" }
+            new CouponItem { Name = "uje rugove", Price = 15000, Unit = "cope", Quantity = 3, Total = 45000, TaxRate = "C", Type = "TT" },
+            new CouponItem { Name = "sendviq", Price = 30000, Unit = "cope", Quantity = 2, Total = 60000, TaxRate = "E", Type = "TT" },
+            new CouponItem { Name = "buke", Price = 8000, Unit = "cope", Quantity = 4, Total = 32000, TaxRate = "D", Type = "TT" },
+            new CouponItem { Name = "machiato e madhe", Unit = "cope", Price = 15000, Quantity = 3, Total = 45000, TaxRate = "E", Type = "TT" }
         },
         Payments =
         {
-            new Payment { Type = PaymentType.Cash, Amount = 500 },
-            new Payment { Type = PaymentType.CreditCard, Amount = 1000 },
-            new Payment { Type = PaymentType.Voucher, Amount = 320 }
+            new Payment { Type = PaymentType.Cash, Amount = 50000 },
+            new Payment { Type = PaymentType.CreditCard, Amount = 100000 },
+            new Payment { Type = PaymentType.Voucher, Amount = 32000 }
         },
-        Total = 1820,
+        Total = 182000,
         TaxGroups =
         {
-            new TaxGroup { TaxRate = "C", TotalForTax = 450, TotalTax = 0 },
-            new TaxGroup { TaxRate = "D", TotalForTax = 320, TotalTax = 26 },
-            new TaxGroup { TaxRate = "E", TotalForTax = 1850, TotalTax = 189 }
+            new TaxGroup { TaxRate = "C", TotalForTax = 45000, TotalTax = 0 },
+            new TaxGroup { TaxRate = "D", TotalForTax = 32000, TotalTax = 26 },
+            new TaxGroup { TaxRate = "E", TotalForTax = 185000, TotalTax = 189 }
         },
-        TotalTax = 215,
-        TotalNoTax = 1605
+        TotalTax = 21500,
+        TotalNoTax = 160500
     };
 
     return posCoupon;
 }
+
 ```
+**NOTE:**  Please check [Important Notes](#important-notes) to understand how the prices are provided
+
+
 
 The POS Coupon includes:
 
@@ -209,6 +229,7 @@ The POS Coupon includes:
 * **Location** is the location/city of the Sale Point
 * **OperatorId** is the ID/Name of the operator/server
 * **ApplicationId** is the unique ID of the Application/POS System used. This code is provided by the Software provider that has implemented the POS Solution.
+* **ReferenceNo** is the number of the original coupon when there is a return or cancellation of a coupon. Otherwise the field is value should be 0.
 * **VerificationNo** is a unique value for each coupon, and it is 16 characters long max. Verification Number is used to check if the Coupon has been verified by the citizen.
 * **Type** this is the type of the coupon. It is an enum value and can be ```SALE```, ```RETURN``` or ```CANCEL```
 * **Time** the time fiscal coupon is issued. The value is Unix timestamp
