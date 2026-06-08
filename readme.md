@@ -229,10 +229,10 @@ public PosCoupon GetPosCoupon()
         Time = new DateTimeOffset(2024, 10, 1, 15,30, 20, TimeSpan.Zero).ToUnixTimeSeconds(),
         Items =
         {
-            new CouponItem { Name = "uje rugove", Price = 15000, Unit = "cope", Quantity = 3, Total = 450, TaxRate = "C", Type = "TT" },
-            new CouponItem { Name = "sendviq", Price = 30000, Unit = "cope", Quantity = 2, Total = 600, TaxRate = "E", Type = "TT" },
-            new CouponItem { Name = "buke", Price = 8000, Unit = "cope", Quantity = 4, Total = 320, TaxRate = "D", Type = "TT" },
-            new CouponItem { Name = "machiato e madhe", Unit = "cope", Price = 15000, Quantity = 3, Total = 450, TaxRate = "E", Type = "TT" }
+            new CouponItem { Name = "uje rugove", Price = 15000, Unit = "cope", Quantity = 3, Total = 45000, TaxRate = "C", Type = "TT" },
+            new CouponItem { Name = "sendviq", Price = 30000, Unit = "cope", Quantity = 2, Total = 60000, TaxRate = "E", Type = "TT" },
+            new CouponItem { Name = "buke", Price = 8000, Unit = "cope", Quantity = 4, Total = 32000, TaxRate = "D", Type = "TT" },
+            new CouponItem { Name = "machiato e madhe", Unit = "cope", Price = 15000, Quantity = 3, Total = 45000, TaxRate = "E", Type = "TT" }
         },
         Payments =
         {
