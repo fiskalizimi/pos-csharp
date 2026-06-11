@@ -271,9 +271,9 @@ The POS Coupon includes:
 * **VerificationNo** is a unique value for each coupon, and it is 16 characters long max. Verification Number is used to check if the Coupon has been verified by the citizen.
 * **Type** this is the type of the coupon. It is an enum value and can be:
     * ```SALE``` (numeric value of 1) - represents a sale
-    * ```RETURN``` (numeric value of 2) - represents returned items. When the coupon type is ```SALE``` the **ReferenceNo** must be the **CouponId** of the original sale
-    * ```CANCEL``` (numeric value of 3) - represents a cancelled coupon. When the coupon type is ```CANCEL``` the **ReferenceNo** must be the **CouponId** of the original sale
-* **Time** the time the fiscal coupon is issued. The value is Unix timestamp
+    * ```CANCEL``` (numeric value of 2) - represents a cancelled coupon. When the coupon type is ```CANCEL``` the **ReferenceNo** must be the **CouponId** of the original sale
+    * ```RETURN``` (numeric value of 3) - represents returned items. When the coupon type is ```SALE``` the **ReferenceNo** must be the **CouponId** of the original sale
+* **Time** the time fiscal coupon is issued. The value is Unix timestamp
 * **Items** is an array of `CouponItem` objects. Each `CouponItem` represents an item sold to the customer, and has the following information:
     * **Name** - is the name of the article
     * **Price** - is the unit price for the article (the value is in cents)
