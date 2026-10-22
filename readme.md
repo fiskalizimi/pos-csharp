@@ -60,6 +60,8 @@ Examples:
 Provide all total values as integers, where the final two digits represent cents (€0.01).
 Values should be stored as integers in €0.01 units (e.g. €1.00 = 100).
 
+The total of an item line (`CouponItem.Total`) is the exception: like the item price, it is stored in €0.0001 units (e.g. €1.00 = 10000).
+
 Examples:
 
 | Literal Value | Integer Representation |
